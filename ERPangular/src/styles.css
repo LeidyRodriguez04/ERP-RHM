@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --letra: font-family: "Nunito Sans", sans-serif;
+    --sizeletra: font-size: 1.5rem;
+    --sizeletra-slider: font-size: 1.4rem; 
+    --sizeletra-sliderp: font-size: 1.4rem; 
+    --color-morado: #201D3C;
+    --color-gris: #B5B5B5;
+    --color-azul: #43baff;
+    --color-moradoClaro: #2C344C;
+    --color-negro: #000000;
+    --color-blanco: #ffff;
+    --color-parrafo-inicio: #6d6d6d;
+    --color-morado-inicio: #7e58c5;
+    --color-morado-slider: #262051;
+    --color-morado-sliderp: #aeaacb;
+    --color-fondo-formulario: linear-gradient(90deg, #00deff 0%, #7141b1 100%);
+    --color-fondo-input: rgba(255, 255, 255, 0.3);
+}
+body{
+    overflow-x: hidden;
+}
