@@ -1,0 +1,13 @@
+.listaul{
+    list-style: none;
+}
+.btn-dash¨{
+    cursor: pointer;
+    
+}
+.form-control{
+    border: none;
+    height: 40px;
+    background: var(--color-gris-buscador-dash);
+    box-shadow: none;
+}

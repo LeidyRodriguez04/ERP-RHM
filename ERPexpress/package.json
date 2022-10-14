@@ -1,0 +1,19 @@
+{
+    "name": "erpmanagement",
+    "version": "1.0.0",
+    "description": "ERP",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon ."
+    },
+    "author": "christophe chadoutaud",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "express": "^4.18.1",
+        "mongoose": "^6.6.3"
+    }
+}
