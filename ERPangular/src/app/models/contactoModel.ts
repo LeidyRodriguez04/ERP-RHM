@@ -11,10 +11,9 @@ export class Contacto{
     tipoEmp : string;
     categoriaEmp : string;
     listUser : any;
-    mensajeBox : string;
-    dateCreation?:any;
+    mensajeBox : string
 
-    constructor(nombres : string, apellidos : string, correo : string, telefono : number, nombreEmp : string, sitioEmp : string, tipoEmp : string, categoriaEmp : string, listUser : any, mensajeBox : string, dateCreation?:any){
+    constructor(nombres : string, apellidos : string, correo : string, telefono : number, nombreEmp : string, sitioEmp : string, tipoEmp : string, categoriaEmp : string, listUser : any, mensajeBox : string){
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
@@ -24,9 +23,7 @@ export class Contacto{
         this.tipoEmp = tipoEmp;
         this.categoriaEmp = categoriaEmp;
         this.listUser = listUser;
-        this.mensajeBox = mensajeBox;
-        this.dateCreation = dateCreation
-
+        this.mensajeBox = mensajeBox
 
     }
 

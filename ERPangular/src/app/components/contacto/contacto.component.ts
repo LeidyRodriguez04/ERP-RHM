@@ -4,6 +4,8 @@ import { Contacto } from '../../models/contactoModel';
 // ES6 Modules or TypeScript
 import Swal from 'sweetalert2';
 
+// CommonJS
+// const Swal = require('sweetalert2')
 
 @Component({
     selector: 'app-contacto',
@@ -79,6 +81,7 @@ export class ContactoComponent implements OnInit {
             listUser: this.arrayUser,
             mensajeBox: this.contactoForm.get('mensajeBox')?.value
         }
+
         console.log(CONTACTO);
         
 
