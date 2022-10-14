@@ -4,11 +4,6 @@
     --cardMargin: 16px;
 } */
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
 /* Params block container 1 */
 .container1Params{
     height: 200px;
@@ -16,36 +11,31 @@ html, body {
 }
 
 .subtitle{
-    color: #8e43af;
-    font-weight: 1200;
-    font-size: 18px;
+    color: var(--color-numero-contacto);
+    font-size: var(--sizeletra);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     letter-spacing: 3px;
 
 }
 
 .H1C1Params, .H2C2Params{
-    font-size: 2.5rem;
     font-weight: 500;
 
 }
 
 /* Params block container 2 */
 .container2Params{
-    background-color: #5010a4;
+    background-color: var(--color-morado-contacto2);
     background-image: url("https://cdn.bizneo.com/blog/wp-content/uploads/2022/02/ERP-RH.jpeg");
 }
 
 .H2C2Params{
-    font-weight: 800;
-    color: #541870;
+    color: var(--color-morado-contacto);
 }
 
 .discover{
-    font-size: 1.5rem;
-    font-weight: 600;
     line-height: 4rem;
-    color: #541870;
+    color: var(--color-morado-contacto);
     ;
 }
 
@@ -56,8 +46,8 @@ html, body {
 
 .card-process1{
     margin-top: 100px;
-    background:white;
-    border: 1px solid #B1B2FF;
+    background: var(--color-blanco);
+    border: var(--color-morado-contacto2) 1px solid;
     border-radius: 8px;
     font-weight: 100;
     margin-right: 90px;
@@ -77,13 +67,12 @@ html, body {
 }
 
 .numeroParams{
-    background: #f2f4ff;
+    background: var(--color-azul-fondonumero-contacto);
     border-radius: 60%;
-    border: #5010a4 1px solid;
+    border: var(--color-morado-contacto2) 1px solid;
     font-weight: 700;
     font-size: 3.5rem;
     line-height:6.2rem;
-    color:  #B1B2FF;
     width: 72px;
     height: 72px;
     text-align:center;
@@ -98,10 +87,8 @@ html, body {
 .text-3D{
     text-transform: uppercase;
     --color:0, 0, 0;
-    font-size: 35px;
     letter-spacing: 10px;
-    font-weight: 800;
-    color: white;
+    color: var(--color-blanco);
     text-shadow: 
     0 1px 0 #ccc, 
     0 2px 0 #acacac,
@@ -124,8 +111,6 @@ html, body {
     .numero-3D{
         text-transform: uppercase;
         --color:0, 0, 0;
-        font-size: 55px;
-        font-weight: 800;
         color: #c8a8d6;
         text-shadow: 
         0 1px 0 #e8c3f9, 
@@ -186,7 +171,7 @@ box-sizing: border-box;
 }
 
 .text_card{
-    font-size: 12px;
+    font-size: 0.8rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-left: -10px;
     color: #5010a4;
@@ -233,18 +218,14 @@ margin-bottom: -4px;
 
 .btnParams{
     background-image: linear-gradient(90deg, #AAC4FF 10%, #5010a4 90%);
-    font-size: 20px;
-    color: #fff;
     border: #fff 1px solid;
     width: 15rem;
     position: absolute;
     right: 50px;
-    margin-top: 20px;
     --color:0, 0, 0;
-    font-size: 12px;
+    font-size: var(--sizeletraboton);
     letter-spacing: 3px;
-    font-weight: 800;
-    color: white;
+    color: var(--color-blanco);
     ;
 
     
