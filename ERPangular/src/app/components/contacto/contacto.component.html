@@ -1,8 +1,7 @@
-<app-navbar></app-navbar>
 <!-- container 1 -->
-<section class="container-fluid col-12 p-5 mb-4 container1Params d-flex flex-wrap justify-content-center">
+<section class="container-fluid col-12 p-5 container1Params d-flex flex-wrap justify-content-center">
     <div class="fw-bold col-12 p-0 m-0  mb-3 subtitle text-center">CONTACTARNOS</div>
-    <h1 class="H1C1Params col-12 col-lg-7 p-0 m-0 text-center text-3D fs-1 fw-bold">¡Ponemos su proyecto en marcha!</h1>
+    <h1 class="H1C1Params col-12 col-lg-7 p-0 m-0 text-center text-3D">¡Ponemos su proyecto en marcha!</h1>
     <!-- mettons su projet en route! -->
 </section>
 
@@ -12,8 +11,8 @@
         <!-- container hija left -->
         <div class="col-12 col-lg-4 p-0 pr-lg-5 m-0 d-flex flex-wrap">
             <div class="fw-bold col-12 mb-4 subtitle">PROCESOS</div>
-            <h2 class="H2C2Params col-12 col-lg-7 fs-1 fw-bold">Descubre como contactarnos</h2>
-            <div class="col-12 p-0 m-0 fs-4 discover fw-semibold"> Descubre el proceso </div>
+            <h2 class="H2C2Params col-12 col-lg-7">Descubre como contactarnos</h2>
+            <div class="col-12 p-0 m-0 mt_5 discover"> Descubre el proceso </div>
 
         </div>
         <!-- container hija right -->
@@ -22,7 +21,7 @@
                 <div class="col-12 d-flex flex-wrap justify-content-center">
                     <div class="col-12 p-3 card-process1 d-flex flex-wrap justify-content-center align-card">
                         <div class="numeroParams">
-                            <p class="numParamsP numero-3D fw-bolder">1</p>
+                            <p class="numParamsP numero-3D">1</p>
                         </div>
                         <div class="fw-bold col-12 text-center p-0 my-3">Solicitar una llamada</div>
                         <div class="textCentral col-12 text-center">Una vez que se envíe el formulario, nos
@@ -37,7 +36,7 @@
                 <div class="col-12 p-0 m-0">
                     <div class="col-12 card-process2 d-flex flex-wrap justify-content-center p-3">
                         <div class="numeroParams">
-                            <p class="numParamsP numero-3D fw-bolder">2</p>
+                            <p class="numParamsP numero-3D">2</p>
                         </div>
                         <div class="fw-bold col-12 text-center p-0 my-3">Analizar su proyecto</div>
                         <div class="textCentral col-12 text-center">Te facilitamos un presupuesto de tu proyecto al
@@ -48,7 +47,7 @@
                 <div class="col-12 p-0 m-0 mt-5">
                     <div class="col-12 card-process1 d-flex flex-wrap justify-content-center p-3">
                         <div class="numeroParams">
-                            <p class="numParamsP numero-3D fw-bolder">3</p>
+                            <p class="numParamsP numero-3D">3</p>
                         </div>
                         <div class="fw-bold col-12 text-center p-0 my-3">En el trabajo!</div>
                         <div class="textCentral col-12 text-center">Una vez aceptada la propuesta y firmado el contrato,
@@ -71,7 +70,7 @@
                         <div class="md-form mb-0">
                             <label for="form_contact_nombre" class="active">Nombres</label>
                             <input formControlName="nombres" type="text" name="form_contact_nombre"
-                                id="form_contact_nom" class="form-control shadow " placeholder="Su nombre" required="">
+                                id="form_contact_nom" class="form-control shadow" placeholder="Su nombre" required="">
                             <span
                                 *ngIf="contactoForm.get('nombres')?.hasError('required') && contactoForm.get('nombres')?.touched"
                                 type="text" class="spanParams fw-bold ps1">nombre invalido</span>
@@ -242,12 +241,12 @@
                             type="text" class="spanParams   fw-bold ps1">Explicanos màs de tu proyecto, por favor</span>
                     </div>
                     <div>
-                        <button #envioMensaje class="btn btnParams mt-4 p-3 fw-bold"  onclick="alertConfirmacionEnvio()" type="submit" id="mandar_mensaje">ENVIAR MENSAJE</button>
+                        <button #envioMensaje class="btn btnParams mt-4  "  onclick="alertConfirmacionEnvio()" type="submit" id="mandar_mensaje">Mandar su mensaje</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
 </section>
-<app-footer></app-footer>
+
 

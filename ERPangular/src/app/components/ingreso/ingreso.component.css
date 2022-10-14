@@ -18,13 +18,9 @@ body{
     line-height: 1;
     text-align: left;
 }
-.btn-login{
-    font-size: var(--sizeletraboton);
-    letter-spacing: 3px;
-}
 
 .contenedorFormulario input[type="text"],
-.contenedorFormulario input[type="password"], .btn-login{
+.contenedorFormulario input[type="password"]{
     outline: none;
     background: var(--color-fondo-input);
     display: block;
@@ -43,7 +39,8 @@ body{
     transition: all .5s;
 
 }
-.btn-login:hover{
+
+.contenedorFormulario input[type="submit"]:hover{
     background: var(--color-morado-inicio);
 }
 

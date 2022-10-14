@@ -13,8 +13,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { InicioDashboardComponent } from './components/inicio-dashboard/inicio-dashboard.component';
-
+import { ListarPersonalComponent } from './components/listar-personal/listar-personal.component';
+import { RegistroPersonalComponent } from './components/registro-personal/registro-personal.component';
 
 
 @NgModule({
@@ -26,8 +26,8 @@ import { InicioDashboardComponent } from './components/inicio-dashboard/inicio-d
     IngresoComponent,
     ContactoComponent,
     NotFoundComponent,
-    InicioDashboardComponent,
-
+    ListarPersonalComponent,
+    RegistroPersonalComponent,
   ],
   imports: [
     BrowserModule,
