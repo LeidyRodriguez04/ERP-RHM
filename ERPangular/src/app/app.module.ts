@@ -13,7 +13,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
+import { CorreosComponent } from './components/correos/correos.component';
+import { HttpClientModule } from "@angular/common/http";
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     IngresoComponent,
     ContactoComponent,
     NotFoundComponent,
+    CorreosComponent,
+    DashboardComponent,
 
   ],
   imports: [
@@ -32,7 +36,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
