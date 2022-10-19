@@ -89,8 +89,8 @@
     --color:0, 0, 0;
     letter-spacing: 10px;
     color: var(--color-blanco);
-    text-shadow: 
-    0 1px 0 #ccc, 
+    text-shadow:
+    0 1px 0 #ccc,
     0 2px 0 #acacac,
     0 3px 0 #a0a0a0,
     0 4px 0 #9b9a9a,
@@ -102,18 +102,18 @@
     0 5px 5px rgba(var(--color),.25),
     0 10px 6px rgba(var(--color),.2),
     0 20px 20px rgba(var(--color),.15);
-    
-    
-    
-    
+
+
+
+
     }
-    
+
     .numero-3D{
         text-transform: uppercase;
         --color:0, 0, 0;
         color: #c8a8d6;
-        text-shadow: 
-        0 1px 0 #e8c3f9, 
+        text-shadow:
+        0 1px 0 #e8c3f9,
         0 2px 0 #c8a8d6,
         0 3px 0 rgb(161, 135, 173),
         0 4px 0 rgb(141, 119, 152),
@@ -138,9 +138,9 @@
 
 /* container3 */
 .container3Params{
-    background-image: linear-gradient(90deg, #00deff 0%, #7141b1 90%);
+    background-image: linear-gradient(90deg, #6390f7 10%, #6231a3 90%);
+    /* background-image: linear-gradient(90deg, --color-azul 0%, #7446af 90%); */
     color: #fff;
-    padding-bottom: 100px;
 
 }
 
@@ -217,7 +217,7 @@ margin-bottom: -4px;
 }
 
 .btnParams{
-    background-image: linear-gradient(90deg, #AAC4FF 10%, #5010a4 90%);
+    background-image: linear-gradient(90deg, #6390f7 10%, #6231a3 90%);
     border: #fff 1px solid;
     width: 15rem;
     position: absolute;
@@ -228,8 +228,8 @@ margin-bottom: -4px;
     color: var(--color-blanco);
     ;
 
-    
-    
+
+
 }
 
 
