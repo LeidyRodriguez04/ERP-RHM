@@ -4,6 +4,8 @@ import { Contacto } from '../../models/contactoModel';
 // ES6 Modules or TypeScript
 import Swal from 'sweetalert2';
 
+// CommonJS
+// const Swal = require('sweetalert2')
 
 @Component({
     selector: 'app-contacto',
@@ -44,7 +46,7 @@ export class ContactoComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        
+
     }
 
     mandarMensaje() {
@@ -79,8 +81,9 @@ export class ContactoComponent implements OnInit {
             listUser: this.arrayUser,
             mensajeBox: this.contactoForm.get('mensajeBox')?.value
         }
-        console.log(CONTACTO);
-        
+
+        console.log("pepe ",CONTACTO);
+
 
     }
     //modal avec animation d'entrée depuis le centre avec rebond et sortie par le haut,
@@ -96,14 +99,17 @@ export class ContactoComponent implements OnInit {
                 title: 'Mensaje enviado correctamente...',
                 showClass: {
                     popup: 'animate__animated animate__zoomInDown'
-                    
+
                 },
                 hideClass:{
                     popup: 'animate__animated animate__backOutUp'
                 },
                 showConfirmButton: false,
                 timer: 2000
-            })    
+            })
         }, 1200);
-    }   
+    }
+    dataContacto(){
+        console.log(this.contactoForm);
+    }
 }

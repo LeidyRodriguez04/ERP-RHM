@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // struture de l'information gardée au format json
 // structura de la informacion guardada al formato json
-const ContactoSchema = mongoose.Schema({
+const ContactoSchema = new mongoose.Schema({
     nombres : {
         type: String,
         required: true,

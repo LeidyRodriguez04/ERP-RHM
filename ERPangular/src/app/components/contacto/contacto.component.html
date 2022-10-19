@@ -1,7 +1,8 @@
+<app-navbar></app-navbar>
 <!-- container 1 -->
-<section class="container-fluid col-12 p-5 container1Params d-flex flex-wrap justify-content-center">
+<section class="container-fluid col-12 p-5 mb-4 container1Params d-flex flex-wrap justify-content-center">
     <div class="fw-bold col-12 p-0 m-0  mb-3 subtitle text-center">CONTACTARNOS</div>
-    <h1 class="H1C1Params col-12 col-lg-7 p-0 m-0 text-center text-3D">¡Ponemos su proyecto en marcha!</h1>
+    <h1 class="H1C1Params col-12 col-lg-7 p-0 m-0 text-center text-3D fs-1 fw-bold">¡Ponemos su proyecto en marcha!</h1>
     <!-- mettons su projet en route! -->
 </section>
 
@@ -10,9 +11,9 @@
     <div class="row align-items-start row-padding">
         <!-- container hija left -->
         <div class="col-12 col-lg-4 p-0 pr-lg-5 m-0 d-flex flex-wrap">
-            <div class="fw-bold col-12 mb-4 subtitle">PROCESSUS</div>
-            <h2 class="H2C2Params col-12 col-lg-7">Descubre como contactarnos</h2>
-            <div class="col-12 p-0 m-0 mt_5 discover"> Descubre el proceso </div>
+            <div class="fw-bold col-12 mb-4 subtitle">PROCESOS</div>
+            <h2 class="H2C2Params col-12 col-lg-7 fs-1 fw-bold">Descubre como contactarnos</h2>
+            <div class="col-12 p-0 m-0 fs-4 discover fw-semibold"> Descubre el proceso </div>
 
         </div>
         <!-- container hija right -->
@@ -21,14 +22,13 @@
                 <div class="col-12 d-flex flex-wrap justify-content-center">
                     <div class="col-12 p-3 card-process1 d-flex flex-wrap justify-content-center align-card">
                         <div class="numeroParams">
-                            <p class="numParamsP numero-3D">1</p>
+                            <p class="numParamsP numero-3D fw-bolder">1</p>
                         </div>
                         <div class="fw-bold col-12 text-center p-0 my-3">Solicitar una llamada</div>
                         <div class="textCentral col-12 text-center">Una vez que se envíe el formulario, nos
                             comunicaremos con usted para discutir sus problemas y objetivos en detalle.</div>
-                        <div class="textCentral col-12 text-center">Sin embargo, puedes contactar primero vía<a
-                                href="https://api.whatsapp.com/"> whatsapp</a> donde un asesor responderá algunas
-                            preguntas.</div>
+                        <div class="textCentral col-12 text-center">Sin embargo, puedes contactarnos primero vía llamada <a
+                                href="https://api.whatsapp.com/"> whatsapp</a> donde un asesor responderá tus inquietudes.</div>
 
                     </div>
                 </div>
@@ -37,9 +37,9 @@
                 <div class="col-12 p-0 m-0">
                     <div class="col-12 card-process2 d-flex flex-wrap justify-content-center p-3">
                         <div class="numeroParams">
-                            <p class="numParamsP numero-3D">2</p>
+                            <p class="numParamsP numero-3D fw-bolder">2</p>
                         </div>
-                        <div class="fw-bold col-12 text-center p-0 my-3">Analisar su proyecto</div>
+                        <div class="fw-bold col-12 text-center p-0 my-3">Analizar su proyecto</div>
                         <div class="textCentral col-12 text-center">Te facilitamos un presupuesto de tu proyecto al
                             detalle (servicios solicitados, precio, calendario provisional y equipo a cargo de tu
                             proyecto)</div>
@@ -48,9 +48,9 @@
                 <div class="col-12 p-0 m-0 mt-5">
                     <div class="col-12 card-process1 d-flex flex-wrap justify-content-center p-3">
                         <div class="numeroParams">
-                            <p class="numParamsP numero-3D">3</p>
+                            <p class="numParamsP numero-3D fw-bolder">3</p>
                         </div>
-                        <div class="fw-bold col-12 text-center p-0 my-3">En el trabajo !</div>
+                        <div class="fw-bold col-12 text-center p-0 my-3">En el trabajo!</div>
                         <div class="textCentral col-12 text-center">Una vez aceptada la propuesta y firmado el contrato,
                             ¡su proyecto puede comenzar! Confía en nosotros, ¡solo puedes estar satisfecho con el
                             resultado!</div>
@@ -64,14 +64,14 @@
 <section class="container-fluid col-12 pt-lg-5 container3Params">
     <form [formGroup]="contactoForm" (ngSubmit)="mandarMensaje(); alertConfirmacionEnvio()" class="row align-items-start ms-5" name="formulario">
         <div class="col-12 col-lg-6 pb-5 p-0 m-0 d-flex flew-wrap">
-            <div style="margin-top:-20px;">
-                <h4 class="mb-4 mt-3">Sus datos</h4>
-                <div class="row" style="margin-top: -11px;">
-                    <div class="col-9 ms-5 p-0 pl-lg-2 mt-1 mb-2 ">
+            <div>
+                <h4 class="mb-4 ">Sus datos</h4>
+                <div class="row">
+                    <div class="col-9 ms-5 p-0 pl-lg-2 mt-1 ">
                         <div class="md-form mb-0">
                             <label for="form_contact_nombre" class="active">Nombres</label>
                             <input formControlName="nombres" type="text" name="form_contact_nombre"
-                                id="form_contact_nom" class="form-control shadow" placeholder="Su nombre" required="">
+                                id="form_contact_nom" class="form-control shadow " placeholder="Su nombre" required="">
                             <span
                                 *ngIf="contactoForm.get('nombres')?.hasError('required') && contactoForm.get('nombres')?.touched"
                                 type="text" class="spanParams fw-bold ps1">nombre invalido</span>
@@ -100,7 +100,7 @@
                                 type="text" class="spanParams fw-bold ps1">Correo invalido</span>
                         </div>
                     </div>
-                    <div class="col-9 ms-5 p-0 pl-lg-2 mt-1 mb-2 ">
+                    <div class="col-9 ms-5 p-0 pl-lg-2 mt-1 ">
                         <div class="md-form mb-0">
                             <label for="form_contact_nom" class="active">Telefono</label>
                             <input formControlName="telefono" type="number" name="form_contact_nom"
@@ -176,11 +176,11 @@
                         <div class="card cardParams form-check checkCard mb-3 shadow">
                             <input class="form-check-input checkParams " formControlName="softErpBox" type="checkbox"
                                 value="">
-                            <a class="mt-3" ><img src="/assets/img/erp (2).png" alt="" style="width: 40px;"></a>
+                            <a class="mt-3" href=""><img src="/assets/img/erp (2).png" alt="" style="width: 40px;"></a>
                             <div class="card-body mt-1">
                                 <h5 class="card-title0 text_card">Soft E.R.P.</h5>
                                 <span *ngIf="contactoForm.get('softErpBox')?.value" class="spanParamsBox2 fw-bold"
-                                    style="font-size: 10px;">Proxidamamente</span>
+                                    style="font-size: 10px;">Proximamente</span>
                             </div>
 
                         </div>
@@ -190,7 +190,7 @@
                             <a class="mt-3" href=""><img src="assets/img/administrateur.png" alt=""
                                     style="width: 40px;"></a>
                             <div class="card-body mt-1">
-                                <h5 class="card-title1 text_card mb-1">Gestion administrativa</h5>
+                                <h5 class="card-title1 text_card mb-1">Gestión administrativa</h5>
                             </div>
                         </div>
                         <div class="card cardParams form-check checkCard mb-3 shadow">
@@ -199,7 +199,7 @@
                             <a class="mt-3" href=""><img src="assets/img/la-discipline.png" alt="" style="width: 40px;"
                                     srcset=""></a>
                             <div class="card-body mt-1">
-                                <h5 class="card-title2 text_card">Gestion de las ausencias</h5>
+                                <h5 class="card-title2 text_card">Gestión de las ausencias</h5>
                             </div>
                         </div>
                         <div class="card cardParams form-check checkCard mb-3 shadow">
@@ -208,7 +208,7 @@
                             <a class="mt-3" href=""><img src="assets/img/gestion-dequipe.png" alt=""
                                     style="width: 40px;" srcset=""></a>
                             <div class="card-body mt-1">
-                                <h5 class="card-title3 text_card">Automatizacion de proceso RH</h5>
+                                <h5 class="card-title3 text_card">Automatización de proceso RH</h5>
                             </div>
                         </div>
                         <div class="card cardParams form-check checkCard mb-3 shadow">
@@ -242,12 +242,12 @@
                             type="text" class="spanParams   fw-bold ps1">Explicanos màs de tu proyecto, por favor</span>
                     </div>
                     <div>
-                        <button #envioMensaje class="btn btnParams mt-4  "  onclick="alertConfirmacionEnvio()" type="submit" id="mandar_mensaje">Mandar su mensaje</button>
+                        <button #envioMensaje class="btn btnParams mt-4 p-3 fw-bold" type="submit" id="mandar_mensaje">ENVIAR MENSAJE</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
 </section>
-
+<app-footer></app-footer>
 

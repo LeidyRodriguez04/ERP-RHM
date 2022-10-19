@@ -7,23 +7,21 @@ const app = express(); // implementation du service - implementacion del servici
 // connection a la base de données - conneccion al la baase de datos
 connectarDB();
 
-// creation du lien cors pour recuperer les données conjointement liées entre angular et express et les lier entre eux 
-app.use(cors());
+app.use(cors()) // pour corriger le probleme de canal 4000/4200 - para corregir el tema de canal 4000 y 4200
 
 // creation d'un json de la base de données - creacion de un json de la base de datos
-app.use(express.json());
+app.use(express.json())
 
 //incrementation de api dans la logique des adresse http
-// incrementacion de api en la logica de las direccionnes http
-app.use('/api/', require('./routes/routes'));
+// incremetacion de api en la logica de las direccionnes http
+app.use('/api', require('./routes/routes'))
 
 // route principale - ruta principal
 app.get('/', (req, res) => {
     res.send('bienvenue')
-});
- 
-// creation du - creacion del localhost:4000 
-app.listen(4000, ()=>{
-    console.log('serveur en place');
-});
+})
 
+// creation du - creacion del localhost:4000
+app.listen(4000, ()=>{
+    console.log('serveur en place http://localhost:4000');
+})

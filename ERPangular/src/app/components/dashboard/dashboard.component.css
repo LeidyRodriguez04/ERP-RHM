@@ -1,0 +1,56 @@
+.body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(43, 119, 226);
+}
+
+.cardSize{
+    width: 200px;
+    height: 100px;
+    margin-bottom: 30px;
+    border: rgb(43, 119, 226) solid 2px;
+    border-radius: 16px;
+    font-size: 14px;
+
+}
+
+.cardSize h6{
+font-size: 20px;
+}
+
+.textMenuParams a{
+    background-color: cornflowerblue;
+    font-size:large;
+    margin: 40px 0;
+}
+
+.textMenuParams a:hover{
+    background-color: cornflowerblue;
+    text-transform: uppercase;
+    color: #ffffff !important;
+    cursor: pointer;
+
+
+}
+
+.estadoParams h6{
+    font-size: 12px;
+
+ }
+
+.estadoParams{
+    height: 330px;
+    margin: 0 20px;
+    border: rgb(43, 119, 226) solid 3px;
+    border-radius: 18px;
+    margin-bottom: -40px;
+    padding-top: 30px;
+ }
+
+.StatParams{
+    height: 350px;
+    margin: 0 20px;
+    border: rgb(43, 119, 226) solid 3px;
+    border-radius: 18px;
+    margin-bottom: 40px;
+ }
