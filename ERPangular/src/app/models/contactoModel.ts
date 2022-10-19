@@ -14,7 +14,7 @@ export class Contacto{
     mensajeBox : string;
     dateCreation?:any
 
-    constructor(nombres : string, apellidos : string, correo : string, telefono : number, nombreEmp : string, sitioEmp : string, tipoEmp : string, categoriaEmp : string, listUser : any, mensajeBox : string){
+    constructor(nombres : string, apellidos : string, correo : string, telefono : number, nombreEmp : string, sitioEmp : string, tipoEmp : string, categoriaEmp : string, listUser : any, mensajeBox : string, dateCreation?:any){
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
