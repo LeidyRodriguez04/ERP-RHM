@@ -1,4 +1,3 @@
-
 <div class>
     <div class="row">
         <div class="col-lg-2  " style="background-color: rgb(109, 162, 254); height: auto;">
@@ -25,7 +24,7 @@
                             <a>Parametros</a>
                         </div>
                         <div class="mb-5 mt-5">
-                            <a routerLink="/" >Desconexion</a>
+                            <a routerLink="/ingreso">Salir</a>
                         </div>
                     </ul>
                 </div>
@@ -115,51 +114,76 @@
                             <form class="row g-3 needs-validation" novalidate>
                                 <h3>Paciente</h3>
                                 <div class="col-md-6">
-                                    <label for="validationCustom01" class="form-label">First name</label>
-                                    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                                    <label for="validationCustom01" class="form-label">Nombres</label>
+                                    <input type="text" class="form-control" id="validationCustom01" value="Nombre"
+                                        required>
                                     <div class="valid-feedback">
-                                    Looks good!
+                                        Looks good!
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="validationCustom02" class="form-label">Last name</label>
-                                    <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                                    <label for="validationCustom02" class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" id="validationCustom02" value="Apellido"
+                                        required>
                                     <div class="valid-feedback">
-                                    Looks good!
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustom04" class="form-label">Documento Identidad</label>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected disabled value="">Elegir una opcion</option>
+                                        <option>Cédula Ciudadania</option>
+                                        <option>Tarjeta de Identidad</option>
+                                        <option>Cedula Extranjería</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-md-center">
+                                    <label for="validationCustom02" class="form-label">Número de Cédula</label>
+                                    <input type="text" class="form-control text-md-center" id="validationCustom02"
+                                        value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
                                     </div>
                                 </div>
                                 <div class="col-md-2 text-md-center">
                                     <label for="validationCustom02" class="form-label">Edad</label>
-                                    <input type="text" class="form-control text-md-center" id="validationCustom02" value="25" required>
+                                    <input type="text" class="form-control text-md-center" id="validationCustom02"
+                                        value="25" required>
                                     <div class="valid-feedback">
-                                    Looks good!
+                                        Looks good!
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="validationCustom02" class="form-label">Talla</label>
-                                    <input type="text" class="form-control text-md-center" id="validationCustom02" value="180" required>
+                                    <label for="validationCustom02" class="form-label">Talla (cm)</label>
+                                    <input type="text" class="form-control text-md-center" id="validationCustom02"
+                                        value="180" required>
                                     <div class="valid-feedback">
-                                    Looks good!
+                                        Looks good!
                                     </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <label for="validationCustom02" class="form-label">Sintomas</label>
-                                    <input type="text" class="form-control" id="validationCustom02" value="urgencia" required>
-                                    <div class="valid-feedback">
-                                    Looks good!
+                                <div class="input-group">
+                                    <div class="input-group-text">
+                                        <label for="validationCustom02" class="form-label">Síntomassssssssss</label>
+                                        <ng-multiselect-dropdown [placeholder]="'Elija'"
+                                            [settings]="dropdownSettings" [data]="dropdownList">
+                                        </ng-multiselect-dropdown>
                                     </div>
                                 </div>
 
 
-                                    <div class="col-4 pt-3" style="width: 220px ;">
-                                        <button class="btn btn-success" type="submit">Crear paciente</button>
-                                    </div>
-                                    <div class="col-4 pt-3" style="width: 220px ;">
-                                        <button class="btn btn-warning" type="submit">Actualizar paciente</button>
-                                    </div>
-                                    <div class="col-4 pt-3" style="width: 220px ;">
-                                        <button class="btn btn-danger" type="submit">Borrar paciente</button>
-                                    </div>
+                                <div class="col-4 pt-3" style="width: 220px ;">
+                                    <button class="btn btn-success" type="submit">Crear paciente</button>
+                                </div>
+                                <div class="col-4 pt-3" style="width: 220px ;">
+                                    <button class="btn btn-warning" type="submit">Actualizar paciente</button>
+                                </div>
+                                <div class="col-4 pt-3" style="width: 220px ;">
+                                    <button class="btn btn-danger" type="submit">Borrar paciente</button>
+                                </div>
 
                             </form>
 
@@ -173,10 +197,11 @@
 
                     <div class="col-lg-3 me-3 ">
                         <div class="container p-3 bg-light estadoParams">
-                            <div style="background-color: rgb(170, 200, 253); height: 292px;" class="rounded-2 pb-3">
+                            <div style="background-color: rgb(170, 200, 253); height: 390px;" class="rounded-2 pb-3">
                                 <h6 class="fw-bold pt-2">El doctor del mes : </h6>
-                                <img class="pb-3" src="https://i1.sndcdn.com/artworks-3qMyWzNhpGQHC77B-egOyww-t500x500.jpg"
-                                   style="width: 120px;border-radius: 16px;" alt="" srcset="">
+                                <img class="pb-3"
+                                    src="https://i1.sndcdn.com/artworks-3qMyWzNhpGQHC77B-egOyww-t500x500.jpg"
+                                    style="width: 120px;border-radius: 16px;" alt="" srcset="">
                                 <div>
                                     <h6>Nombre : Bryan</h6>
                                     <h6>Apellidos : EstaEnLaCocina</h6>
@@ -209,6 +234,3 @@
 </div>
 
 <app-footer></app-footer>
-
-
-
