@@ -1,20 +1,16 @@
-<div>
-    <button class="btn btn-dark m-5" routerLink="/listar-personal">Registar usuario</button>
-</div>
-
-<form [formGroup]="personalForm" (ngSubmit)="agregarPersonal()" class="bg-body row m-3" action="">
+<form [formGroup]="doctoresForm" (ngSubmit)="agregarDoctores()" class="bg-body row m-3" action="">
     <div class="col-md-8 col-sm-12 bg-primary px-lg-5 py-3 px-4 m-4">
         <h1 class="d-flex justify-content-center">REGISTRO DE PERSONAL</h1>
         <div class="row">
             <div class="col-6">
                 <label for="input1" class="form-label">Nombre</label>
                 <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="First name">
-                <span class="text-danger fw-bold" *ngIf="personalForm.get('nombre')?.hasError('required') && personalForm.get('nombre')?.touched">Espacio obligatorio</span>
+                <span class="text-danger fw-bold" *ngIf="doctoresForm.get('nombre')?.hasError('required') && doctoresForm.get('nombre')?.touched">Espacio obligatorio</span>
             </div> 
             <div class="col-6">
                 <label for="input2" class="form-label">Apellido</label>
                 <input formControlName="apellido" type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
-                <span class="text-danger fw-bold" *ngIf="personalForm.get('apellido')?.hasError('required') && personalForm.get('apellido')?.touched">Espacio obligatorio</span>
+                <span class="text-danger fw-bold" *ngIf="doctoresForm.get('apellido')?.hasError('required') && doctoresForm.get('apellido')?.touched">Espacio obligatorio</span>
             </div>
             <div class="col-12 d-flex flex-column mt-1 mb-1">
                 <label for="bday">Fecha de nacimiento:</label>
@@ -29,12 +25,12 @@
                     <option value="contraseña">Contraseña</option>
                     <option value="cedulaExtrajera">Cedula de extrajeria</option>
                 </select>
-                <span class="text-danger fw-bold" *ngIf="personalForm.get('tipoIdentificacion')?.hasError('required') && personalForm.get('tipoIdentificacion')?.touched">Espacio obligatorio</span>
+                <span class="text-danger fw-bold" *ngIf="doctoresForm.get('tipoIdentificacion')?.hasError('required') && doctoresForm.get('tipoIdentificacion')?.touched">Espacio obligatorio</span>
             </div>
             <div class="col-7 col-lg-8">
                 <label for="input4" class="form-label">Numero de identificacion</label>
                 <input formControlName="numeroIdentificacion" type="number" class="form-control" placeholder="Numero de indetificacion" aria-label="Last name">
-                <span class="text-danger fw-bold" *ngIf="personalForm.get('numeroIdentificacion')?.hasError('required') && personalForm.get('numeroIdentificacion')?.touched">Espacio obligatorio</span>
+                <span class="text-danger fw-bold" *ngIf="doctoresForm.get('numeroIdentificacion')?.hasError('required') && doctoresForm.get('numeroIdentificacion')?.touched">Espacio obligatorio</span>
             </div>
             <div class="col-6">
                 <label for="inputState" class="form-label">Genero</label>
@@ -43,17 +39,17 @@
                     <option value="hombre">Hombre</option>
                     <option value="mujer">Mujer</option>
                 </select>
-                <span class="text-danger fw-bold" *ngIf="personalForm.get('genero')?.hasError('required') && personalForm.get('genero')?.touched">Espacio obligatorio</span>
+                <span class="text-danger fw-bold" *ngIf="doctoresForm.get('genero')?.hasError('required') && doctoresForm.get('genero')?.touched">Espacio obligatorio</span>
             </div>
             <div class="col-6">
                 <label for="input4" class="form-label">Telefono</label>
                 <input formControlName="telefono" type="number" class="form-control" placeholder="Telefono" aria-label="Last name">
-                <span class="text-danger fw-bold" *ngIf="personalForm.get('telefono')?.hasError('required') && personalForm.get('telefono')?.touched">Espacio obligatorio</span>
+                <span class="text-danger fw-bold" *ngIf="doctoresForm.get('telefono')?.hasError('required') && doctoresForm.get('telefono')?.touched">Espacio obligatorio</span>
             </div>
             <div class="col">
                 <label for="input4" class="form-label">Dirección</label>
                 <input formControlName="direccion" type="text" class="form-control" placeholder="Dirección" aria-label="Last name">
-                <span class="text-danger fw-bold" *ngIf="personalForm.get('direccion')?.hasError('required') && personalForm.get('direccion')?.touched">Espacio obligatorio</span>
+                <span class="text-danger fw-bold" *ngIf="doctoresForm.get('direccion')?.hasError('required') && doctoresForm.get('direccion')?.touched">Espacio obligatorio</span>
             </div>
             <div class="col-4">
                 <label for="inputState" class="form-label">Cargo</label>
@@ -61,10 +57,10 @@
                     <option selected>Elija una...</option>
                     <option value="administrador">Administrador</option>
                 </select>
-                <span class="text-danger fw-bold" *ngIf="personalForm.get('cargo')?.hasError('required') && personalForm.get('cargo')?.touched">Espacio obligatorio</span>
+                <span class="text-danger fw-bold" *ngIf="doctoresForm.get('cargo')?.hasError('required') && doctoresForm.get('cargo')?.touched">Espacio obligatorio</span>
             </div>
             <div class="col-12 mt-3">
-                <button type="submit" class="btn btn-danger" [disabled]="personalForm.invalid">Registarse</button>
+                <button type="submit" class="btn btn-danger" [disabled]="doctoresForm.invalid">Registarse</button>
             </div>
         </div>
 
@@ -73,3 +69,4 @@
         <img src="/assets/img/logo12.jpeg" class="w-100"  alt="">
     </div>
 </form>
+<app-footer></app-footer>
