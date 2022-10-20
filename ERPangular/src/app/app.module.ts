@@ -16,6 +16,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CorreosComponent } from './components/correos/correos.component';
 import { HttpClientModule } from "@angular/common/http";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ListarDoctoresComponent } from './components/listar-doctores/listar-doctores.component';
+import { RegistrarDoctoresComponent } from './components/registrar-doctores/registrar-doctores.component';
 
 
 @NgModule({
@@ -29,6 +31,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NotFoundComponent,
     CorreosComponent,
     DashboardComponent,
+    RegistrarDoctoresComponent,
+    ListarDoctoresComponent,
+
 
   ],
   imports: [
