@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
+import { FormsModule } from '@angular/forms'; 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +40,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserAnimationsModule,
     CarouselModule,
     HttpClientModule,
+    FormsModule,
     NgMultiSelectDropDownModule.forRoot(),
   ],
   providers: [],
