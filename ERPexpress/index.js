@@ -6,6 +6,8 @@ const app = express(); // implementation du service - implementacion del servici
 // connection a la base de données - conneccion al la baase de datos
 connectarDB(); 
 
+app.use(cors()) // pour corriger le probleme de canal 4000/4200 - para corregir el tema de canal 4000 y 4200
+
 // creation d'un json de la base de données - creacion de un json de la base de datos
 app.use(express.json())
 
@@ -17,8 +19,8 @@ app.use('/api', require('./routes/routes'))
 app.get('/', (req, res) => {
     res.send('bienvenue')
 })
- 
-// creation du - creacion del localhost:4000 
+
+// creation du - creacion del localhost:4000
 app.listen(4000, ()=>{
     console.log('serveur en place http://localhost:4000');
 })

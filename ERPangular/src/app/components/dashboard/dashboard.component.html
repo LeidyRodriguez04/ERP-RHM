@@ -1,0 +1,214 @@
+
+<div class>
+    <div class="row">
+        <div class="col-lg-2  " style="background-color: rgb(109, 162, 254); height: auto;">
+            <!-- navbar vertical -->
+            <div class="container text-lg-start ">
+                <div class="ms-3 fw-bold fs-3 textMenuParams ">
+                    <div>
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <ul>
+                        <!-- <div class="mb-5 mt-5">
+                            <a>Dashboard</a>
+                        </div> -->
+                        <div class="mb-5 mt-5">
+                            <a>Doctores</a>
+                        </div>
+                        <div class="mb-5 mt-5">
+                            <a>Enfermeras</a>
+                        </div>
+                        <div class="mb-5 mt-5">
+                            <a>Pacientes</a>
+                        </div>
+                        <div class="mb-5 mt-5">
+                            <a>Parametros</a>
+                        </div>
+                        <div class="mb-5 mt-5">
+                            <a routerLink="/" >Desconexion</a>
+                        </div>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="col-lg-10 container-fluid " style="background-color: rgb(147, 190, 247); height: auto; ">
+            <!--cuerpo del dashboard  -->
+            <!-- barra de busqueda -->
+            <div class="mt-0 mb-4">
+                <div class="row p-3 border bg-light">
+                    <div class="col-4 d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                    <div class="col-5"></div>
+                    <div class="col-3">
+                        <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                        <select class="form-select" id="autoSizingSelect">
+                            <option selected>Elige el profesional...</option>
+                            <option value="1">Dr Duggy</option>
+                            <option value="2">Dr Bryan kitchen</option>
+                            <option value="3">Dra Super Leidy </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- iconos de nuevos pacientes, pacientes salidos, doctores presentes, enfermeras presentes -->
+            <div class="container-fluid overflow-hidden text-center ">
+                <div class="row">
+                    <div class="col-2 p-3 mx-auto rounded-3 bg-light border cardSize">
+                        <div class="col-12 row bg-light">
+                            <div class="col-8">
+                                <h6 class="">54</h6>
+                                <span>Nuevos pacientes</span>
+                            </div>
+                            <div class="col-4">
+                                <img src="./assets/img/health-insurance.png" style="width: 50px;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 p-3 mx-auto rounded-3 bg-light border cardSize">
+                        <div class="col-12 row bg-light">
+                            <div class="col-8">
+                                <h6 class="">23</h6>
+                                <span>Doctores en consultas</span>
+                            </div>
+                            <div class="col-4">
+                                <img src="./assets/img/online.png" style="width: 50px;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 p-3 mx-auto rounded-3 bg-light border cardSize">
+                        <div class="col-12 row bg-light">
+                            <div class="col-8">
+                                <h6 class="">7</h6>
+                                <span>Cirujanos</span>
+                            </div>
+                            <div class="col-4">
+                                <img src="./assets/img/surgeon.png" style="width: 50px;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 p-3 mx-auto rounded-3 bg-light border cardSize">
+                        <div class="col-12 row bg-light">
+                            <div class="col-8">
+                                <h6 class="">46</h6>
+                                <span>Enfermeras</span>
+                            </div>
+                            <div class="col-4">
+                                <img src="./assets/img/nurse.png" style="width: 50px;" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- estado del paciente por el grande mejor doctor del mes por el pequeno -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="p-4 bg-light estadoParams">
+                            <form class="row g-3 needs-validation" novalidate>
+                                <h3>Paciente</h3>
+                                <div class="col-md-6">
+                                    <label for="validationCustom01" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                                    <div class="valid-feedback">
+                                    Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validationCustom02" class="form-label">Last name</label>
+                                    <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                                    <div class="valid-feedback">
+                                    Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-2 text-md-center">
+                                    <label for="validationCustom02" class="form-label">Edad</label>
+                                    <input type="text" class="form-control text-md-center" id="validationCustom02" value="25" required>
+                                    <div class="valid-feedback">
+                                    Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="validationCustom02" class="form-label">Talla</label>
+                                    <input type="text" class="form-control text-md-center" id="validationCustom02" value="180" required>
+                                    <div class="valid-feedback">
+                                    Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="validationCustom02" class="form-label">Sintomas</label>
+                                    <input type="text" class="form-control" id="validationCustom02" value="urgencia" required>
+                                    <div class="valid-feedback">
+                                    Looks good!
+                                    </div>
+                                </div>
+
+
+                                    <div class="col-4 pt-3" style="width: 220px ;">
+                                        <button class="btn btn-success" type="submit">Crear paciente</button>
+                                    </div>
+                                    <div class="col-4 pt-3" style="width: 220px ;">
+                                        <button class="btn btn-warning" type="submit">Actualizar paciente</button>
+                                    </div>
+                                    <div class="col-4 pt-3" style="width: 220px ;">
+                                        <button class="btn btn-danger" type="submit">Borrar paciente</button>
+                                    </div>
+
+                            </form>
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 me-3 ">
+                        <div class="container p-3 bg-light estadoParams">
+                            <div style="background-color: rgb(170, 200, 253); height: 292px;" class="rounded-2 pb-3">
+                                <h6 class="fw-bold pt-2">El doctor del mes : </h6>
+                                <img class="pb-3" src="https://i1.sndcdn.com/artworks-3qMyWzNhpGQHC77B-egOyww-t500x500.jpg"
+                                   style="width: 120px;border-radius: 16px;" alt="" srcset="">
+                                <div>
+                                    <h6>Nombre : Bryan</h6>
+                                    <h6>Apellidos : EstaEnLaCocina</h6>
+                                    <h6>N° de intervenciones : 3</h6>
+                                    <h6>N° de muertos : 18</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- personal presentes y ultimos pacientes llegados -->
+                <div class="row gy-5 mt-5">
+                    <div class="col-lg-6">
+                        <div class="p-3 bg-light StatParams chartContainer">grafico Personnal presente con btn
+                            <canvas id="barCanvas" arial-label="chart" role="img"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3 bg-light StatParams">grafico ultimos pacientes</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<app-footer></app-footer>
+
+
+

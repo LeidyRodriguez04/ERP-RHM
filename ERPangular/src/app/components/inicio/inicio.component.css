@@ -10,7 +10,7 @@
     padding: 20px 35px;
 }
 .parrafoS2{
-    color: var(color-parrafo-inicio);
+    color: var(--color-parrafo-inicio);
     line-height: 1.875;
     font-weight: 400;
 }
