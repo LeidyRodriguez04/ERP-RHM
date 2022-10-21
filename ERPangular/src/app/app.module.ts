@@ -18,6 +18,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CorreosComponent } from './components/correos/correos.component';
 import { HttpClientModule } from "@angular/common/http";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ListarPacienteComponent } from './components/listar-paciente/listar-paciente.component';
+import { RegistrarPacienteComponent } from './components/registrar-paciente/registrar-paciente.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NotFoundComponent,
     CorreosComponent,
     DashboardComponent,
+    ListarPacienteComponent,
+    RegistrarPacienteComponent,
 
   ],
   imports: [
