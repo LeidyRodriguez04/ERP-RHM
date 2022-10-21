@@ -4,12 +4,19 @@
         <div class="toggle"></div>
         <div class="formulario p-5">
             <h2 class="titulologin mb-4">Iniciar Sesión</h2>
+<<<<<<< HEAD
             <form [formGroup]="loginForm" (ngSubmit)="validarLogin()" action="/dashboard">
                 <input type="text" placeholder="Usuario" class="px-3 py-2 mb-4" formControlName="usuario" required>
                 <input type="password" placeholder="Contraseña" class="px-3 py-2 mb-4" formControlName="password" required>
                 <button type="submit" value="INICIAR SESIÓN" class="p-3 fw-bold btn-login" routerLink="/dashboard">INICIAR SESIÓN</button>
+=======
+            <form action="/inicio-dashboard">
+                <input type="text" placeholder="Usuario" class="px-3 py-2 mb-4" required>
+                <input type="password" placeholder="Contraseña" class="px-3 py-2 mb-4" required>
+                <button type="submit" value="INICIAR SESIÓN" routerlink="/dashboard" class="p-3 fw-bold btn-login">INICIAR SESIÓN</button>
+>>>>>>> chris
             </form>
-        </div>        
+        </div>
         <div class="reset-contraseña">
             <a href="#">Olvide contraseña</a>
         </div>
