@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Contacto } from '../../models/contactoModel';
 // ES6 Modules or TypeScript
 import Swal from 'sweetalert2';
-import { ActivatedRoute, Router } from "@angular/router";
-import { ContactoService } from 'src/app/services/contacto.service';
 
 // CommonJS
 // const Swal = require('sweetalert2')
@@ -24,7 +22,7 @@ export class ContactoComponent implements OnInit {
     arrayUser: any = [] //array vide pour recevoir les checkbox selectionnées
 
     //structure pour donner des ordres ou actions desirées... exple: je veux que le "Nombres" soit obligatoirement rempli avec "Validators.required", si il n'y a que [''] cela veut dire que le choix est libre, et "pattern" est la pour faire respecter un regex precis.
-    constructor(private fb: FormBuilder, private servicioContacto: ContactoService, private idRoute: ActivatedRoute, private router: Router) {
+    constructor(private fb: FormBuilder) {
 
         this.contactoForm = this.fb.group({
             nombres: ['', Validators.required],
@@ -84,25 +82,16 @@ export class ContactoComponent implements OnInit {
             mensajeBox: this.contactoForm.get('mensajeBox')?.value
         }
 
-        console.log(CONTACTO)
-        console.log(JSON.stringify(CONTACTO));
-            this.router.navigate(['/contacto'])
-            this.servicioContacto.postContacto(CONTACTO).subscribe(() => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Contacto registrado',
-                })
-            }, (error) => {
-                console.log(error)
-            })
+        console.log("pepe ",CONTACTO);
+
 
     }
     //modal avec animation d'entrée depuis le centre avec rebond et sortie par le haut,
     //modal con animacion de entrada desde el centro con salto y salida por arriba
-    alertConfirmacionEnvio() {
+    alertConfirmacionEnvio(){
         setTimeout(() => {
             Swal.fire({
-                position: 'center',
+                position:'center',
                 imageUrl: 'assets/img/mail_2.gif',
                 imageWidth: 200,
                 imageHeight: 180,
@@ -112,12 +101,15 @@ export class ContactoComponent implements OnInit {
                     popup: 'animate__animated animate__zoomInDown'
 
                 },
-                hideClass: {
+                hideClass:{
                     popup: 'animate__animated animate__backOutUp'
                 },
                 showConfirmButton: false,
                 timer: 2000
             })
         }, 1200);
+    }
+    dataContacto(){
+        console.log(this.contactoForm);
     }
 }
