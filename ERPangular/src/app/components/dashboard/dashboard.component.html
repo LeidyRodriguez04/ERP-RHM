@@ -1,25 +1,28 @@
-<div class="d-flex">
-    <div class=" sidebar-container px-2 py-1">
-        <div class="logo">
-            <img src="/assets/img/hospital.png" alt="" width="120" height="120">
-        </div>
-        <div class="menu d-flex flex-column align-items-center row pt-2 offset-1">
-            <a routerLink="/dashboard"><i class="fa-solid fa-house col-2 me-1"></i>Inicio</a>
-            <a href=""><i class="fa-solid fa-user-doctor col-2 me-1"></i>Doctores</a>
-            <a href=""><i class="fa-solid fa-hospital-user col-2 me-1"></i>Pacientes</a>
-            <a routerLink="/"><i class="fa-solid fa-right-from-bracket col-2 me-1"></i>Salir</a>
-        </div>
-    </div>
-
-    <div class="">
-        <nav class="navbar bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand">Navbar</a>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+<div class="dashboard">
+    <div class="d-flex">
+        <div class=" sidebar-container px-2 py-1">
+            <div class="logo">
+                <img src="/assets/img/hospital.png" alt="" width="120" height="120">
             </div>
-        </nav>
+            <div class="menu d-flex flex-column align-items-center row pt-2 offset-1">
+                <a routerLink="/dashboard"><i class="fa-solid fa-house col-2 me-1"></i>Inicio</a>
+                <a href=""><i class="fa-solid fa-user-doctor col-2 me-1"></i>Doctores</a>
+                <a href=""><i class="fa-solid fa-hospital-user col-2 me-1"></i>Pacientes</a>
+                <a routerLink="/"><i class="fa-solid fa-right-from-bracket col-2 me-1"></i>Salir</a>
+            </div>
+        </div>
+    
+        <div class="w-100">
+            <nav class="navbar bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand">Navbar</a>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
     </div>
 </div>
+<app-footer></app-footer>

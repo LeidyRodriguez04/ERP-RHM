@@ -1,3 +1,6 @@
+.dashboard{
+    position: relative;
+}
 .sidebar-container{
     background-color: var(--color-azul);
     min-height: 100vh;
