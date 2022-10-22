@@ -12,10 +12,11 @@ export class RegistrarPacienteComponent implements OnInit {
   selectedItems:any = [];
   dropdownSettings:any = {};
 
-  pacienteForm: FormGroup
-  regexNomApe = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/
-  regexNumDocumento = /[0123456789]{1,8}/
-  regexEdad = /[0123456789]{1,2}/
+  pacienteForm: FormGroup;
+  regexNomApe = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
+  regexNumDocumento = /[0123456789]{1,8}/;
+  regexTelefono = /\+57?[ -]*([0-9][ -]*){10}/;
+  regexEdad = /[0123456789]{1,2}/;
   regexAltura = /[0123456789]{2,3}/
 
   constructor(private fb:FormBuilder) {
@@ -24,9 +25,10 @@ export class RegistrarPacienteComponent implements OnInit {
       apellido: ['', Validators.required, Validators.pattern(this.regexNomApe)],
       documento: ['', Validators.required],
       numDocumento: ['', Validators.required, Validators.pattern(this.regexNumDocumento)],
+      telefono: ['', Validators.required, Validators.pattern(this.regexTelefono)],
       edad: ['', Validators.required, Validators.pattern(this.regexEdad)],
       altura: ['', Validators.required, Validators.pattern(this.regexAltura)],
-      sintomas: ['', Validators.required],
+      sintomas: ['', Validators.required]
       })
     }
 
@@ -48,6 +50,9 @@ export class RegistrarPacienteComponent implements OnInit {
       unSelectAllText: 'UnSelect All',
       itemsShowLimit: 5,
       allowSearchFilter: true
-    };
+    }
+  }
+  agregarPaciente(){
+
   }
 }

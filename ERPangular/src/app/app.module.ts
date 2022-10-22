@@ -21,7 +21,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ListarPacienteComponent } from './components/listar-paciente/listar-paciente.component';
 import { RegistrarPacienteComponent } from './components/registrar-paciente/registrar-paciente.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

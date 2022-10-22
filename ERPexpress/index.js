@@ -1,6 +1,7 @@
 console.log('test nodemon');
 const express = require('express'); // rappelle d'express
 const connectarDB = require('./config/db')
+const cors = require('cors')
 
 const app = express(); // implementation du service - implementacion del servicio
 // connection a la base de données - conneccion al la baase de datos
@@ -21,6 +22,6 @@ app.get('/', (req, res) => {
 })
 
 // creation du - creacion del localhost:4000
-app.listen(4000, ()=>{
+app.listen(4200, ()=>{
     console.log('serveur en place http://localhost:4000');
 })

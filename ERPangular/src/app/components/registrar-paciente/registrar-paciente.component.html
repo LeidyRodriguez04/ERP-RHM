@@ -18,7 +18,7 @@
                             <a>Enfermeras</a>
                         </div>
                         <div class="mb-5 mt-5">
-                            <a>Pacientes</a>
+                            <a routerLink="/registrar-pacientes">Pacientes</a>
                         </div>
                         <div class="mb-5 mt-5">
                             <a>Parametros</a>
@@ -111,78 +111,65 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="p-4 bg-light estadoParams">
-                            <form class="row g-3 needs-validation" novalidate>
+                            <form class="row g-3 needs-validation" novalidate [formGroup]="pacienteForm"(ngSubmit)="agregarPaciente()">
                                 <h3>Paciente</h3>
                                 <div class="col-md-6">
                                     <label for="validationCustom01" class="form-label">Nombres</label>
-                                    <input type="text" class="form-control" id="validationCustom01" value="Nombre"
+                                    <input type="text" class="form-control" formControlName="nombre" value="Nombre"
                                         required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <span class="text-danger" *ngIf="pacienteForm.get('nombre')?.hasError('required') && pacienteForm.get('nombre')?.touched">Nombre obligatorio</span>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="validationCustom02" class="form-label">Apellidos</label>
-                                    <input type="text" class="form-control" id="validationCustom02" value="Apellido"
+                                    <input type="text" class="form-control" formControlName="apellido" value="Apellido"
                                         required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <span class="text-danger" *ngIf="pacienteForm.get('apellido')?.hasError('required') && pacienteForm.get('apellido')?.touched">Apellido obligatorio</span>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="validationCustom04" class="form-label">Documento Identidad</label>
-                                    <select class="form-select" id="validationCustom04" required>
+                                    <select class="form-select" formControlName="documento" required>
                                         <option selected disabled value="">Elegir una opcion</option>
                                         <option>Cédula Ciudadania</option>
                                         <option>Tarjeta de Identidad</option>
                                         <option>Cedula Extranjería</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please select a valid state.
-                                    </div>
+                                    <span class="text-danger" *ngIf="pacienteForm.get('documento')?.hasError('required') && pacienteForm.get('documento')?.touched">Documento obligatorio</span>
                                 </div>
                                 <div class="col-md-4 text-md-center">
                                     <label for="validationCustom02" class="form-label">Número del documento</label>
-                                    <input type="text" class="form-control text-md-center" id="validationCustom02"
+                                    <input type="text" class="form-control text-md-center" formControlName="numDocumento"
                                         value="" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <span class="text-danger" *ngIf="pacienteForm.get('numDocumento')?.hasError('required') && pacienteForm.get('numDocumento')?.touched">Número de documento obligatorio</span>
                                 </div>
                                 <div class="col-md-2 text-md-center">
                                     <label for="validationCustom02" class="form-label">Telefono</label>
-                                    <input type="text" class="form-control text-md-center" id="validationCustom02"
+                                    <input type="text" class="form-control text-md-center" formControlName="telefono"
                                         value="" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <span class="text-danger" *ngIf="pacienteForm.get('telefono')?.hasError('required') && pacienteForm.get('telefono')?.touched">Telefono obligatorio</span>
                                 </div>
                                 <div class="col-md-2 text-md-center">
                                     <label for="validationCustom02" class="form-label">Edad</label>
-                                    <input type="text" class="form-control text-md-center" id="validationCustom02"
+                                    <input type="text" class="form-control text-md-center" formControlName="edad"
                                         value="" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <span class="text-danger" *ngIf="pacienteForm.get('edad')?.hasError('required') && pacienteForm.get('edad')?.touched">Edad obligatoria</span>
                                 </div>
                                 <div class="col-md-2">
                                     <label for="validationCustom02" class="form-label">Altura (cm)</label>
-                                    <input type="text" class="form-control text-md-center" id="validationCustom02"
+                                    <input type="text" class="form-control text-md-center" formControlName="altura"
                                         value="" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <span class="text-danger" *ngIf="pacienteForm.get('altura')?.hasError('required') && pacienteForm.get('altura')?.touched">Altura obligatoria</span>
                                 </div>
                                 <div class="col-md-10">
                                     <label for="validationCustom02" class="form-label">Síntomas</label>
                                     <ng-multiselect-dropdown [placeholder]="'Elegir los sintomas'"
-                                            [settings]="dropdownSettings" [data]="dropdownList">
-                                    </ng-multiselect-dropdown>                                    
+                                            [settings]="dropdownSettings" [data]="dropdownList" formControlName="sintomas">
+                                    </ng-multiselect-dropdown>  
+                                    <span class="text-danger" *ngIf="pacienteForm.get('sintomas')?.hasError('required') && pacienteForm.get('sintomas')?.touched">Sintomas obligatorio</span>                                  
                                 </div>
 
 
                                 <div class="col-4 pt-3" style="width: 220px ;">
-                                    <button class="btn btn-success" type="submit">Crear paciente</button>
+                                    <button class="btn btn-success" type="submit" [disabled]="pacienteForm.invalid">Crear paciente</button>
                                 </div>
                                 <div class="col-4 pt-3" style="width: 220px ;">
                                     <button class="btn btn-warning" type="submit">Actualizar paciente</button>
