@@ -46,7 +46,7 @@ export class ContactoComponent implements OnInit {
     }
 
     ngOnInit(): void {
-
+        this.mandarMensaje()
     }
 
     mandarMensaje() {
@@ -64,6 +64,25 @@ export class ContactoComponent implements OnInit {
         for (const elementoArr of DataCheckBox) {
             if (this.contactoForm.get(elementoArr.name)?.value == true) {
                 this.arrayUser.push(elementoArr.egal)
+                // setTimeout(() => {
+                //     Swal.fire({
+                //         position:'center',
+                //         imageUrl: 'assets/img/mail_2.gif',
+                //         imageWidth: 200,
+                //         imageHeight: 180,
+                //         imageAlt: 'Custom image',
+                //         title: 'Mensaje enviado correctamente...',
+                //         showClass: {
+                //             popup: 'animate__animated animate__zoomInDown'
+
+                //         },
+                //         hideClass:{
+                //             popup: 'animate__animated animate__backOutUp'
+                //         },
+                //         showConfirmButton: false,
+                //         timer: 2000
+                //     })
+                // }, 1200);
             }
         }
 
@@ -82,34 +101,14 @@ export class ContactoComponent implements OnInit {
             mensajeBox: this.contactoForm.get('mensajeBox')?.value
         }
 
-        console.log("pepe ",CONTACTO);
+        console.log(CONTACTO);
 
 
     }
     //modal avec animation d'entrée depuis le centre avec rebond et sortie par le haut,
     //modal con animacion de entrada desde el centro con salto y salida por arriba
-    alertConfirmacionEnvio(){
-        setTimeout(() => {
-            Swal.fire({
-                position:'center',
-                imageUrl: 'assets/img/mail_2.gif',
-                imageWidth: 200,
-                imageHeight: 180,
-                imageAlt: 'Custom image',
-                title: 'Mensaje enviado correctamente...',
-                showClass: {
-                    popup: 'animate__animated animate__zoomInDown'
 
-                },
-                hideClass:{
-                    popup: 'animate__animated animate__backOutUp'
-                },
-                showConfirmButton: false,
-                timer: 2000
-            })
-        }, 1200);
-    }
-    dataContacto(){
-        console.log(this.contactoForm);
-    }
+    // dataContacto(){
+    //     console.log(this.contactoForm);
+    // }
 }
