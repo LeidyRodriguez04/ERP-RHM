@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+// recuperation des services de contacto.service qui se communique aussi avec Correos.ts
+import { ContactoService } from 'src/app/services/contacto.service';
+// recuperation des modeles de contacto
 import { Contacto } from '../../models/contactoModel';
-// ES6 Modules or TypeScript
+// modul sweetalert2 pour les alertes de style
 import Swal from 'sweetalert2';
 
 // CommonJS
@@ -14,15 +17,16 @@ import Swal from 'sweetalert2';
 })
 export class ContactoComponent implements OnInit {
 
-    contactoForm: FormGroup; // format de via "FormGroup" de contacto
+    contactoForm: FormGroup; // format de "FormGroup" de contacto
 
+    // tous Mes patterns des inputs
     regexCorreo = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
     regexTelefono = /[\(]?[\+]?(\d{2}|\d{3})[\)]?[\s]?((\d{6}|\d{8})|(\d{3}[\*\.\-\s]){3}|(\d{2}[\*\.\-\s]){4}|(\d{4}[\*\.\-\s]){2})|\d{8}|\d{10}|\d{12}/;
     regexWeb = /^(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[‌​a-z]{3}\.([a-z]+)?$/
-    arrayUser: any = [] //array vide pour recevoir les checkbox selectionnées
+
 
     //structure pour donner des ordres ou actions desirées... exple: je veux que le "Nombres" soit obligatoirement rempli avec "Validators.required", si il n'y a que [''] cela veut dire que le choix est libre, et "pattern" est la pour faire respecter un regex precis.
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private servicioContacto: ContactoService) {
 
         this.contactoForm = this.fb.group({
             nombres: ['', Validators.required],
@@ -46,9 +50,9 @@ export class ContactoComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.mandarMensaje()
     }
 
+    arrayUser: any = [] //array vide pour recevoir les checkbox selectionnées
     mandarMensaje() {
         // array de la base de données des checkbox; la clé est le nom du formControlName ds ce cas mais pourrait etre different si je ne m'abuse, et egal: la valeur qui la retransmettra à la liste élue.
         const DataCheckBox = [
@@ -64,28 +68,8 @@ export class ContactoComponent implements OnInit {
         for (const elementoArr of DataCheckBox) {
             if (this.contactoForm.get(elementoArr.name)?.value == true) {
                 this.arrayUser.push(elementoArr.egal)
-                // setTimeout(() => {
-                //     Swal.fire({
-                //         position:'center',
-                //         imageUrl: 'assets/img/mail_2.gif',
-                //         imageWidth: 200,
-                //         imageHeight: 180,
-                //         imageAlt: 'Custom image',
-                //         title: 'Mensaje enviado correctamente...',
-                //         showClass: {
-                //             popup: 'animate__animated animate__zoomInDown'
-
-                //         },
-                //         hideClass:{
-                //             popup: 'animate__animated animate__backOutUp'
-                //         },
-                //         showConfirmButton: false,
-                //         timer: 2000
-                //     })
-                // }, 1200);
             }
         }
-
         // en ce qui concerne le "model", exple :  pour que "nombres" soit  appelé tu vas le chercher la valeur de "nombres" ds le formulaire contacto
         // es del modelo, ejemplo: pra que "nombres sea llamado, debes buscar el valor de nombres en el ormulario"
         const CONTACTO: Contacto = {
@@ -100,15 +84,29 @@ export class ContactoComponent implements OnInit {
             listUser: this.arrayUser,
             mensajeBox: this.contactoForm.get('mensajeBox')?.value
         }
-
         console.log(CONTACTO);
-
-
+        this.servicioContacto.postContacto(CONTACTO).subscribe(() => {
+            //modal avec animation d'entrée depuis le centre avec rebond et sortie par le haut - modal con animacion de entrada desde el centro con salto y salida por arriba
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                imageUrl: 'assets/img/mail_2.gif',
+                imageWidth: 200,
+                imageHeight: 180,
+                imageAlt: 'Custom image',
+                title: 'Mensaje enviado correctamente...',
+                showClass: {
+                    popup: 'animate__animated animate__zoomInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutUp'
+                },
+                showConfirmButton: false,
+                timer: 2000
+            })
+        }, (error) => {
+            console.log(error)
+        }) //callback pour les erreurs/para los errores
     }
-    //modal avec animation d'entrée depuis le centre avec rebond et sortie par le haut,
-    //modal con animacion de entrada desde el centro con salto y salida por arriba
 
-    // dataContacto(){
-    //     console.log(this.contactoForm);
-    // }
 }

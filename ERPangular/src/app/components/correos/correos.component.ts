@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+// recuperation des services de contacto.service qui se communique aussi avec Correos.ts
 import { ContactoService } from 'src/app/services/contacto.service';
+// recuperation des modeles contacto
 import { Contacto } from 'src/app/models/contactoModel';
+// recuperation du module sweetAlert2 , alertes de style
 import Swal from 'sweetalert2';
 
 @Component({
