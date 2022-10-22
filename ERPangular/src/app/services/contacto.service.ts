@@ -21,7 +21,7 @@ export class ContactoService {
     postContacto(contacto: Contacto): Observable<any> {
         return this.http.post(`${this.url}/crearContacto`, contacto)
     }
-    deleteContacto(id:string): Observable<any> {
+    deleteContacto(id:any): Observable<any> {
         return this.http.delete(`${this.url}/borrar-contacto/${id}`)
     }
 

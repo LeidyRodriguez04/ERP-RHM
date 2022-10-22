@@ -15,7 +15,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let elementoCorreo of listarCorreos">
-                    <td class="ms-3 center" type="date"><p class="d-flex justify-content-center mt-3">{{elementoCorreo.dateCreation | date}}</p></td>
+                    <td class="ms-3 center" type="date"><p class="d-flex justify-content-center fw-bold mt-3">{{elementoCorreo.dateCreation | date}}</p></td>
                     <td>
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
@@ -62,7 +62,7 @@
                         </div>
                     </td>
                     <td ><button class="btn btn-danger container mt-3" type="button"
-                            id="BorrarMensaje">Borrar mensaje</button></td>
+                            id="BorrarMensaje" (click)="deleteContacto(elementoCorreo._id)"><i class="fa fa-refresh fa-spin mx-1 text-white"></i> Borrar mensaje</button></td>
                 </tr>
             </tbody>
         </table>
