@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 })
 
 //ruta de doctores
-app.use('/api/registrarDoctores', require('./routes/routes'));
+app.use('/api/doctores', require('./routes/routes'));
 
 
 // creation du - creacion del localhost:4000
