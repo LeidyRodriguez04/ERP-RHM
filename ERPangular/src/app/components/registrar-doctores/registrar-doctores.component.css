@@ -1,6 +1,14 @@
+
 .paddingForm{
     padding: 20px 150px;
 }
 .bgRegistroDash{
     background-image: url(/assets/img/fondo.jpeg);
+}
+.bday{
+    box-sizing: border-box;
+    border: 0cm;
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 8px;
 }

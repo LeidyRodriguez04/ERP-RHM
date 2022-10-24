@@ -22,10 +22,10 @@ app.get('/', (req, res) => {
 })
 
 //ruta de doctores
-app.use('/api/doctores', require('./routes/routes'));
+app.use('/api/registrarDoctores', require('./routes/routes'));
 
 
 // creation du - creacion del localhost:4000
-app.listen(4200, ()=>{
+app.listen(4000, ()=>{
     console.log('serveur en place http://localhost:4000');
 })

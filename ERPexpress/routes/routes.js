@@ -11,6 +11,7 @@ router.delete(`/borrar-contacto/:id`, controllerContacto.borrarContacto)
 // router.get('/contacto/:id', controllerContacto.obtenerContactoEspecifico)
 
 router.post('/', doctorController.crearDoctor);
+router.get('/', doctorController.consultarDoctor);
 
 
 module.exports=router // exportation des routes

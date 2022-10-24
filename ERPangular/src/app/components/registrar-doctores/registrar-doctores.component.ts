@@ -10,17 +10,19 @@ import { Doctores } from 'src/app/models/dashboardDoctores';
 export class RegistrarDoctoresComponent implements OnInit {
 
   doctoresForm: FormGroup;
+  regexcorreo= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  regexnumero= /^[0-9]/;
 
   constructor(private fb: FormBuilder) {
     this.doctoresForm = this.fb.group({
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
+      fecha: ['', [Validators.required]],
       tipoIdentificacion: ['', [Validators.required]],
-      numeroIdentificacion: ['', [Validators.required]],
-      genero: ['', [Validators.required]],
-      telefono: ['', [Validators.required]],
-      direccion: ['', [Validators.required]],
-      cargo: ['', [Validators.required]]
+      correo: ['', [Validators.required, Validators.pattern(this.regexcorreo)]],
+      numeroIdentificacion: ['', [Validators.required, Validators.pattern(this.regexnumero)]],
+      area: ['', [Validators.required]],
+      telefono: ['', [Validators.required, Validators.pattern(this.regexnumero)]],
     })
   }
 
@@ -33,10 +35,10 @@ export class RegistrarDoctoresComponent implements OnInit {
       apellido: this.doctoresForm.get('apellido')?.value,
       tipoIdentificacion: this.doctoresForm.get('tipoIdentificacion')?.value,
       numeroIdentificacion: this.doctoresForm.get('numeroIdentificacion')?.value,
-      genero: this.doctoresForm.get('genero')?.value,
+      fecha: this.doctoresForm.get('fecha')?.value,
+      correo: this.doctoresForm.get('correo')?.value,
       telefono: this.doctoresForm.get('telefono')?.value,
-      direccion: this.doctoresForm.get('direccion')?.value,
-      cargo: this.doctoresForm.get('cargo')?.value,
+      area: this.doctoresForm.get('area')?.value,
     }
     console.log(DOCTORES)
   }

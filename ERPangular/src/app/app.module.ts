@@ -14,12 +14,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CorreosComponent } from './components/correos/correos.component';
-import { HttpClientModule } from "@angular/common/http";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ListarDoctoresComponent } from './components/listar-doctores/listar-doctores.component';
 import { RegistrarDoctoresComponent } from './components/registrar-doctores/registrar-doctores.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -30,11 +30,11 @@ import { RegistrarDoctoresComponent } from './components/registrar-doctores/regi
     InicioComponent,
     IngresoComponent,
     ContactoComponent,
-    NotFoundComponent,
     CorreosComponent,
     DashboardComponent,
     RegistrarDoctoresComponent,
     ListarDoctoresComponent,
+    NotFoundComponent
 
 
   ],

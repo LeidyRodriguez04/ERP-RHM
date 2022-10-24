@@ -17,23 +17,26 @@ const DoctorSchema = mongoose.Schema({
         type: String,
         require: true
     },
-    nombre: {
+    fecha: {
         type: String,
         require: true
     },
-    nombre: {
+    correo: {
         type: String,
         require: true
     },
-
-    nombre: string;
-    apellido: string;
-    tipoIdentificacion: Number;
-    numeroIdentificacion: Number;
-    genero: string;
-    telefono: number;
-    direccion: string;
-    cargo: string;
+    area: {
+        type: String,
+        require: true
+    },
+    telefono: {
+        type: String,
+        require: true
+    },
+    fech_cre: {
+        type: Date,
+        default: Date.now()
+    }
 });
 
 module.exports = mongoose.model('Doctor',DoctorSchema); // exprotamos el modelo que permite enviar la data a la DB

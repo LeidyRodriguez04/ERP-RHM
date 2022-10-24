@@ -4,21 +4,20 @@ export class Doctores {
     apellido: string;
     tipoIdentificacion: Number;
     numeroIdentificacion: Number;
-    genero: string;
+    fecha: string;
+    correo: string;
     telefono: number;
-    direccion: string;
-    cargo: string;
+    area: string;
 
-    constructor(nombre: string, apellido: string, tipoIdentificacion: Number, numeroIdentificacion: Number, genero: string, telefono: number, direccion: string, cargo: string) {
+    constructor(nombre: string, apellido: string, tipoIdentificacion: Number, numeroIdentificacion: Number, fecha: string, correo: string, area: string, telefono: number) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoIdentificacion = tipoIdentificacion; 
         this.numeroIdentificacion = numeroIdentificacion;
-        this.genero = genero;
+        this.fecha = fecha;
+        this.correo = correo;
+        this.area = area;
         this.telefono = telefono;
-        this.direccion = direccion;
-        this.cargo = cargo;
-
     }
 
 }
