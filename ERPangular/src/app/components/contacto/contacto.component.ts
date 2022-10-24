@@ -53,6 +53,12 @@ export class ContactoComponent implements OnInit {
     }
 
     arrayUser: any = [] //array vide pour recevoir les checkbox selectionnées
+
+    // if (document.form.elementArr.required.value != ""){
+    // }else{
+    //     console.log(mandarMensaje())
+    // }
+
     mandarMensaje() {
         // array de la base de données des checkbox; la clé est le nom du formControlName ds ce cas mais pourrait etre different si je ne m'abuse, et egal: la valeur qui la retransmettra à la liste élue.
         const DataCheckBox = [
@@ -68,6 +74,7 @@ export class ContactoComponent implements OnInit {
         for (const elementoArr of DataCheckBox) {
             if (this.contactoForm.get(elementoArr.name)?.value == true) {
                 this.arrayUser.push(elementoArr.egal)
+
             }
         }
         // en ce qui concerne le "model", exple :  pour que "nombres" soit  appelé tu vas le chercher la valeur de "nombres" ds le formulaire contacto
@@ -88,6 +95,7 @@ export class ContactoComponent implements OnInit {
         this.servicioContacto.postContacto(CONTACTO).subscribe(() => {
             //modal avec animation d'entrée depuis le centre avec rebond et sortie par le haut - modal con animacion de entrada desde el centro con salto y salida por arriba
             Swal.fire({
+                width: 400,
                 position: 'center',
                 icon: 'success',
                 imageUrl: 'assets/img/mail_2.gif',
@@ -104,6 +112,9 @@ export class ContactoComponent implements OnInit {
                 showConfirmButton: false,
                 timer: 2000
             })
+
+
+
         }, (error) => {
             console.log(error)
         }) //callback pour les erreurs/para los errores

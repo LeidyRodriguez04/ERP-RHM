@@ -242,7 +242,7 @@
                             type="text" class="spanParams   fw-bold ps1">Explicanos màs de tu proyecto, por favor</span>
                     </div>
                     <div>
-                        <button class="btn btnParams mt-4 p-3 fw-bold" type="submit" (click)="mandarMensaje()">ENVIAR MENSAJE</button>
+                        <button class="btn btnParams mt-4 p-3 fw-bold" type="onsubmit" [disabled]="contactoForm.invalid" (click)="mandarMensaje()">ENVIAR MENSAJE</button>
                     </div>
                 </div>
             </div>
