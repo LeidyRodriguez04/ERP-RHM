@@ -1,1 +1,166 @@
-<p>listar-paciente works!</p>
+<div class>
+    <div class="row">
+        <div class="col-lg-2  " style="background-color: rgb(109, 162, 254); height: auto;">
+            <!-- navbar vertical -->
+            <div class="container text-lg-start ">
+                <div class="ms-3 fw-bold fs-3 textMenuParams ">
+                    <div>
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <ul>
+                        <!-- <div class="mb-5 mt-5">
+                            <a>Dashboard</a>
+                        </div> -->
+                        <div class="mb-5 mt-5">
+                            <a>Doctores</a>
+                        </div>
+                        <div class="mb-5 mt-5">
+                            <a>Enfermeras</a>
+                        </div>
+                        <div class="mb-5 mt-5">
+                            <a routerLink="/listar-pacientes">Pacientes</a>
+                        </div>
+                        <div class="mb-5 mt-5">
+                            <a>Parametros</a>
+                        </div>
+                        <div class="mb-5 mt-5">
+                            <a routerLink="/ingreso">Salir</a>
+                        </div>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="col-lg-10 container-fluid " style="background-color: rgb(147, 190, 247); height: auto; ">
+            <!--cuerpo del dashboard  -->
+            <!-- barra de busqueda -->
+            <div class="mt-0 mb-4">
+                <div class="row p-3 border bg-light">
+                    <div class="col-4 d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                    <div class="col-5"></div>
+                    <div class="col-3">
+                        <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                        <select class="form-select" id="autoSizingSelect">
+                            <option selected>Elige el profesional...</option>
+                            <option value="1">Dr Duggy</option>
+                            <option value="2">Dr Bryan kitchen</option>
+                            <option value="3">Dra Super Leidy </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- iconos de nuevos pacientes, pacientes salidos, doctores presentes, enfermeras presentes -->
+            <div class="container-fluid overflow-hidden text-center ">
+                <div class="row">
+                    <div class="col-2 p-3 mx-auto rounded-3 bg-light border cardSize">
+                        <div class="col-12 row bg-light">
+                            <div class="col-8">
+                                <h6 class="">54</h6>
+                                <span>Nuevos pacientes</span>
+                            </div>
+                            <div class="col-4">
+                                <img src="./assets/img/health-insurance.png" style="width: 50px;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 p-3 mx-auto rounded-3 bg-light border cardSize">
+                        <div class="col-12 row bg-light">
+                            <div class="col-8">
+                                <h6 class="">23</h6>
+                                <span>Doctores en consultas</span>
+                            </div>
+                            <div class="col-4">
+                                <img src="./assets/img/online.png" style="width: 50px;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 p-3 mx-auto rounded-3 bg-light border cardSize">
+                        <div class="col-12 row bg-light">
+                            <div class="col-8">
+                                <h6 class="">7</h6>
+                                <span>Cirujanos</span>
+                            </div>
+                            <div class="col-4">
+                                <img src="./assets/img/surgeon.png" style="width: 50px;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 p-3 mx-auto rounded-3 bg-light border cardSize">
+                        <div class="col-12 row bg-light">
+                            <div class="col-8">
+                                <h6 class="">46</h6>
+                                <span>Enfermeras</span>
+                            </div>
+                            <div class="col-4">
+                                <img src="./assets/img/nurse.png" style="width: 50px;" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- estado del paciente por el grande mejor doctor del mes por el pequeno -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-4 bg-light estadoParams">
+                            <div class="d-flex justify-content-between">
+                                <h3>Listar Paciente</h3>
+                                <button class="btn-crear text-white" type="submit" routerLink="/registrar-paciente">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Crear paciente</button>
+                            </div>
+                            <h3>Total de pacientes:{{listarPaciente.length}}</h3>
+                            <table *ngIf="listarPaciente.length > 0" class="table table-responsive table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Documento</th>
+                                        <th>Numero de documento</th>
+                                        <th>Telefono</th>
+                                        <th>Edad</th>
+                                        <th>Altura</th>
+                                        <th>Sintomas</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let mipaciente of listarPaciente">
+                                        <td>{{mipaciente.nombre}}</td>
+                                        <td>{{mipaciente.apellido}}</td>
+                                        <td>{{mipaciente.documento}}</td>
+                                        <td>{{mipaciente.numDocumento}}</td>
+                                        <td>{{mipaciente.telefono}}</td>
+                                        <td>{{mipaciente.edad}}</td>
+                                        <td>{{mipaciente.altura}}</td>
+                                        <td>{{mipaciente.sintomas}}</td>
+                                        <td><button class="btn-actualizar text-white p-2" type="submit">
+                                            <i class="fa-solid fa-file-pen"></i>
+                                            Actualizar</button></td>
+                                        <td><button class="btn btn-danger" type="submit" (click)="eliminarPaciente(mipaciente._id)">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                            Borrar</button></td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                            <h3 class="" *ngIf="listarPaciente.length ==0">No hay pacientes registrados</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<app-footer></app-footer>9

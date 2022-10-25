@@ -32,11 +32,9 @@ const pacienteSchema = mongoose.Schema({
     sintomas: {
         type:String,
         require:true
-    },
-    fec_ingreso:{
-        type:Data,
-        default: Data.now()
     }
+},{
+    versionKey: false
 })
 
 module.exports = mongoose.model('paciente', pacienteSchema)

@@ -9,6 +9,7 @@ import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RegistrarPacienteComponent } from './components/registrar-paciente/registrar-paciente.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ListarPacienteComponent } from './components/listar-paciente/listar-paciente.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
     {path:'contacto', component: ContactoComponent},
     {path:'correos', component: CorreosComponent},
     {path:'dashboard', component: DashboardComponent},
+    {path:'pacientes', component: ListarPacienteComponent},
     {path:'registrar-paciente', component: RegistrarPacienteComponent},
     {path:'404',component:NotFoundComponent},
     {path:'**', redirectTo:'404', pathMatch: 'full'} //cette ligne tjs a la fin de ce bloc

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { PacienteService } from "src/app/services/paciente.service";
+import { Paciente } from 'src/app/models/paciente';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-registrar-paciente',
@@ -19,7 +22,7 @@ export class RegistrarPacienteComponent implements OnInit {
   regexEdad = /[0123456789]{1,2}/;
   regexAltura = /[0123456789]{2,3}/
 
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder, private servicioPaciente: PacienteService) {
     this.pacienteForm = this.fb.group({
       nombre: ['', Validators.required, Validators.pattern(this.regexNomApe)],
       apellido: ['', Validators.required, Validators.pattern(this.regexNomApe)],
@@ -53,6 +56,24 @@ export class RegistrarPacienteComponent implements OnInit {
     }
   }
   agregarPaciente(){
-
+    const PACIENTE:Paciente ={
+      nombre: this.pacienteForm.get('nombre')?.value,
+      apellido: this.pacienteForm.get('apellido')?.value,
+      documento: this.pacienteForm.get('documento')?.value,
+      numDocumento: this.pacienteForm.get('numDocumento')?.value,
+      telefono: this.pacienteForm.get('telefono')?.value,
+      edad: this.pacienteForm.get('edad')?.value,
+      altura: this.pacienteForm.get('altura')?.value,
+      sintomas: this.pacienteForm.get('sintomas')?.value,
+    }
+    console.log(PACIENTE)
+    this.servicioPaciente.postPaciente(PACIENTE).subscribe(()=> {
+      Swal.fire({
+        icon: 'success',
+        title: 'Paciente registrado',
+      })
+    }, (error) => {
+      console.log(error)
+    })  
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PacienteService } from "src/app/services/paciente.service";
+import { Paciente } from 'src/app/models/paciente';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-listar-paciente',
@@ -7,9 +10,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarPacienteComponent implements OnInit {
 
-  constructor() { }
+  listarPaciente: Paciente[]=[];
+
+  constructor(private servicioPaciente: PacienteService) { }
 
   ngOnInit(): void {
+    this.obtenerPacientes()
   }
-
+  obtenerPacientes(){
+    this.servicioPaciente.getPacientes().subscribe((data)=>{
+      console.log(data)
+      this.listarPaciente = data
+    },(error) =>{
+      console.log(error);       
+    })
+  }
+  eliminarPaciente(id:any){
+    Swal.fire({
+      title: 'Esta seguro de eliminar?',
+      text: "Recuerde que no se puede devolver",
+      icon: 'warning',
+      iconColor:'#ff8500',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, borrar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.servicioPaciente.deletePacientes(id).subscribe((data)=>{
+          Swal.fire({
+            title: 'Dato eliminado corractamente',
+            icon: 'success',
+            iconColor:'#84b500',
+          })
+        },(error) =>{
+          console.log(error);       
+        })        
+      }
+    })
+  }
 }

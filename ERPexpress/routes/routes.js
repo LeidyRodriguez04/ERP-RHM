@@ -10,11 +10,11 @@ router.delete(`/borrar-contacto/:id`, controllerContacto.borrarContacto)
 // router.put('/actualizar-contacto/:id', controllerContacto.actualizarContacto)
 // router.get('/contacto/:id', controllerContacto.obtenerContactoEspecifico)
 
-router.get('/pacientes', controllerPaciente.obtenerPaciente)
-router.post('/crear-paciente', controllerPaciente.crearPaciente)
-router.put('/actualizar-paciente:id', controllerPaciente.actualizarPaciente)
-router.delete('/borrar-paciente:id', controllerPaciente.borrarPaciente)
-router.get('/pacientes/:id', controllerPaciente.obtenerPacienteId)
+router.get(`/listar-pacientes`, controllerPaciente.obtenerPaciente)
+router.post(`/crear-paciente`, controllerPaciente.crearPaciente)
+router.put(`/actualizar-paciente/:id`, controllerPaciente.actualizarPaciente)
+router.delete(`/borrar-paciente/:id`, controllerPaciente.borrarPaciente)
+router.get(`/listar-pacientes/:id`, controllerPaciente.obtenerPacienteId)
 
 module.exports=router // exportation des routes
 

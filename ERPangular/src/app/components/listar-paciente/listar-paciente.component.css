@@ -1,0 +1,8 @@
+.btn-actualizar{
+    background: var(--color-azul);
+    border: none;
+    border-radius: 6px;
+}
+.btn-crear{
+    background: var(--color-morado-slider);
+}
