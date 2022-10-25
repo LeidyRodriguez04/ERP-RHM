@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder ,FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Doctores } from 'src/app/models/dashboardDoctores';
+import { DoctorService } from 'src/app/services/doctor.service';
+import Swal from 'sweetalert2';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar-doctores',
@@ -10,26 +13,30 @@ import { Doctores } from 'src/app/models/dashboardDoctores';
 export class RegistrarDoctoresComponent implements OnInit {
 
   doctoresForm: FormGroup;
-  regexcorreo= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  regexnumero= /^[0-9]/;
+  regexcorreo = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  regexnumero = /^[0-9]/;
+  titulo_form = 'Crear doctor';
+  id: string | null;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router, private _DoctorService: DoctorService, private idRoute: ActivatedRoute) {
     this.doctoresForm = this.fb.group({
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
       fecha: ['', [Validators.required]],
-      tipoIdentificacion: ['', [Validators.required]],
       correo: ['', [Validators.required, Validators.pattern(this.regexcorreo)]],
+      tipoIdentificacion: ['', [Validators.required]],
       numeroIdentificacion: ['', [Validators.required, Validators.pattern(this.regexnumero)]],
       area: ['', [Validators.required]],
       telefono: ['', [Validators.required, Validators.pattern(this.regexnumero)]],
     })
+    this.id = this.idRoute.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
+    this.accionSolicitada();
   }
 
-  agregarDoctores(){
+  agregarDoctores() {
     const DOCTORES: Doctores = {
       nombre: this.doctoresForm.get('nombre')?.value,
       apellido: this.doctoresForm.get('apellido')?.value,
@@ -41,6 +48,51 @@ export class RegistrarDoctoresComponent implements OnInit {
       area: this.doctoresForm.get('area')?.value,
     }
     console.log(DOCTORES)
+
+    if (this.id !== null) {
+      //editamos producto
+      this._DoctorService.putDoctor(this.id, DOCTORES).subscribe(data => {
+        console.log(data)
+        this.router.navigate(['/']);
+        Swal.fire({
+          title: 'Datos del doctor actualizados!',
+          text: 'Se guardaron los cambios de datos del doctor',
+          icon: 'success',
+          confirmButtonText: 'Vale'
+        })
+      }, error => {
+        console.log(error);
+      })
+    } else {
+      this._DoctorService.postDoctor(DOCTORES).subscribe(data => {
+        this.router.navigate(['/']);
+        Swal.fire({
+          title: 'Exito!',
+          text: 'El registro se creo correctamente',
+          icon: 'success',
+          confirmButtonText: 'Vale'
+        })
+      }, error => {
+        console.log(error);
+      })
+    }
   }
 
+  accionSolicitada() {
+    if (this.id !== null) {
+      this.titulo_form = "Editar producto";
+      this._DoctorService.getDoctor(this.id).subscribe(data => {
+        this.doctoresForm.setValue({
+          nombre: data.nombre,
+          apellido: data.categoria,
+          tipoIdentificacion: data.tipoIdentificacion,
+          numeroIdentificacion: data.numeroIdentificacion,
+          fecha: data.fecha,
+          correo: data.correo,
+          telefono: data.telefono,
+          area: data.area
+        })
+      })
+    }
+  }
 }

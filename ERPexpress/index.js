@@ -14,7 +14,7 @@ app.use(express.json())
 
 //incrementation de api dans la logique des adresse http
 // incremetacion de api en la logica de las direccionnes http
-app.use('/api/doctores', require('./routes/routes'))
+app.use('/api', require('./routes/routes'))
 
 // route principale - ruta principal
 app.get('/', (req, res) => {

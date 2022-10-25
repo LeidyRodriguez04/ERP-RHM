@@ -20,6 +20,7 @@ const routes: Routes = [
     {path:'dashboard', component: DashboardComponent},
     {path:'listar-doctores', component: ListarDoctoresComponent},
     {path:'registrar-doctores', component: RegistrarDoctoresComponent},
+    {path:'editar-doctor/:id', component: RegistrarDoctoresComponent},
     {path:'404',component:NotFoundComponent},
     {path:'**', redirectTo:'404', pathMatch: 'full'}, //cette ligne tjs a la fin de ce bloc
 
