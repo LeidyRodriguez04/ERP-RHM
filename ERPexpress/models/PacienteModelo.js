@@ -30,7 +30,7 @@ const pacienteSchema = mongoose.Schema({
         require:true
     },
     sintomas: {
-        type:String,
+        type:Array,
         require:true
     }
 },{

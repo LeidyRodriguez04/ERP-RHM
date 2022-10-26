@@ -7,9 +7,9 @@ export class Paciente{
     telefono: number;
     edad: number;
     altura: number;
-    sintomas: string;
+    sintomas: any;
 
-    constructor(nombre: string, apellido: string, documento: string, numDocumento: number, telefono:number, edad:number, altura:number, sintomas:string){
+    constructor(nombre: string, apellido: string, documento: string, numDocumento: number, telefono:number, edad:number, altura:number, sintomas:any){
         this.nombre = nombre
         this.apellido = apellido
         this.documento = documento

@@ -17,7 +17,7 @@ exports.crearPaciente = async (req, res) => {
         res.send(paciente)
     } catch (error) {
         console.log(error)
-        res.status(500).send('Existe un problema, comunicarse con el administrador')
+        res.status(500).send('Existe un problema crearP, comunicarse con el administrador')
 
     }
 }
@@ -60,11 +60,11 @@ exports.borrarPaciente = async (req, res) => {
 }
 exports.obtenerPacienteId = async (req, res) => {
     try {
-        let producto_especifico = await Paciente.findById(req.params.id)
-        if (!producto_especifico) {
+        let paciente_especifico = await Paciente.findById(req.params.id)
+        if (!paciente_especifico) {
             res.status(404).json({ msg: "El paciente solicitado no existe" })
         } else {
-            res.json(producto_especifico)
+            res.json(paciente_especifico)
         }
     } catch (error) {
         console.log(error)
