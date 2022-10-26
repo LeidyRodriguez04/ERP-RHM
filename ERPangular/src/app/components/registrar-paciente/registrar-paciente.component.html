@@ -111,8 +111,8 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="p-4 bg-light estadoParams">
-                            <form class="row g-3 needs-validation" novalidate [formGroup]="pacienteForm"(ngSubmit)="agregarPaciente()">
-                                <h3>Paciente</h3>
+                            <form class="row g-3 needs-validation" novalidate [formGroup]="pacienteForm"(ngSubmit)="dataPaciente()">
+                                <h3>{{titulo_formulario}}</h3>
                                 <div class="col-md-6">
                                     <label for="validationCustom01" class="form-label">Nombres</label>
                                     <input type="text" class="form-control" formControlName="nombre" value="Nombre"
@@ -161,15 +161,18 @@
                                 </div>
                                 <div class="col-md-10">
                                     <label for="validationCustom02" class="form-label">Síntomas</label>
-                                    <ng-multiselect-dropdown [placeholder]="'Elegir los sintomas'"
-                                            [settings]="dropdownSettings" [data]="dropdownList" formControlName="sintomas">
+                                    <ng-multiselect-dropdown 
+                                        [placeholder]="'Elegir los sintomas'"
+                                        [settings]="dropdownSettings" 
+                                        [data]="dropdownList" 
+                                        formControlName="sintomas">
                                     </ng-multiselect-dropdown>  
                                     <span class="text-danger" *ngIf="pacienteForm.get('sintomas')?.hasError('required') && pacienteForm.get('sintomas')?.touched">Sintomas obligatorio</span>                                  
                                 </div>
 
 
                                 <div class="col-4 pt-3" style="width: 220px ;">
-                                    <button class="btn btn-success" type="submit">Crear paciente</button>
+                                    <button class="btn btn-success" type="submit" [disabled]="pacienteForm.invalid">Crear paciente</button>
                                 </div>
                                 <div class="col-4 pt-3" style="width: 220px ;">
                                     <button class="btn btn-warning" type="submit">Actualizar paciente</button>

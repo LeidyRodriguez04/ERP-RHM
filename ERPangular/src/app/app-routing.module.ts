@@ -19,6 +19,7 @@ const routes: Routes = [
     {path:'correos', component: CorreosComponent},
     {path:'dashboard', component: DashboardComponent},
     {path:'pacientes', component: ListarPacienteComponent},
+    {path:'editarPaciente/:id',component: RegistrarPacienteComponent},
     {path:'registrar-paciente', component: RegistrarPacienteComponent},
     {path:'404',component:NotFoundComponent},
     {path:'**', redirectTo:'404', pathMatch: 'full'} //cette ligne tjs a la fin de ce bloc

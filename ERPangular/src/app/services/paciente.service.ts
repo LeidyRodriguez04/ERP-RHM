@@ -18,7 +18,10 @@ export class PacienteService {
   deletePacientes(id:string): Observable<any>{
     return this.http.delete(`${this.url}/borrar-paciente/${id}`)
   }
-  postPaciente(paciente:Paciente): Observable<any>{
+  postPaciente(paciente: Paciente): Observable<any>{
     return this.http.post(`${this.url}/crear-paciente`, paciente)
+  }
+  getPaciente(id:string): Observable<any>{
+    return this.http.get(`${this.url}/listar-pacientes/${id}`)
   }
 }

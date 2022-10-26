@@ -38,6 +38,7 @@ export class ListarPacienteComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.servicioPaciente.deletePacientes(id).subscribe((data)=>{
+          this.obtenerPacientes()
           Swal.fire({
             title: 'Dato eliminado corractamente',
             icon: 'success',
