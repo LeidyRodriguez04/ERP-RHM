@@ -10,14 +10,14 @@ router.delete(`/borrar-contacto/:id`, controllerContacto.borrarContacto)
 // router.put('/actualizar-contacto/:id', controllerContacto.actualizarContacto)
 // router.get('/contacto/:id', controllerContacto.obtenerContactoEspecifico)
 
-router.get('/doctores', doctorController.consultarDoctor);
-router.post('/registar-doctores', doctorController.crearDoctor);
+router.get('/listar-doctores', doctorController.consultarDoctor);
+router.post('/registrar-doctor', doctorController.crearDoctor);
 router.delete("/borrar-doctor/:id", doctorController.borrarDoctor);
 router.put(`/actualizar-doctor/:id`, doctorController.actualizarDoctor);
-router.get(`/doctores/:id`, doctorController.obtenerDoctorId);
+router.get(`/listar-doctores/:id`, doctorController.obtenerDoctorId);
 
 
-module.exports=router // exportation des routes
+module.exports = router // exportation des routes
 
 
 

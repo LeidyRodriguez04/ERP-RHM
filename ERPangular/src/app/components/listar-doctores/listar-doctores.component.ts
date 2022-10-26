@@ -13,21 +13,21 @@ export class ListarDoctoresComponent implements OnInit {
   listarDoctores: Doctores[] = [];
 
   constructor(private servicioDoctor: DoctorService) { }
-  
+
   ngOnInit(): void {
-    this.obtenerDoctor()
+    this.obtenerDoctores()
   }
 
-  obtenerDoctor(){
-    this.servicioDoctor.getDoctores().subscribe((data)=>{
+  obtenerDoctores() {
+    this.servicioDoctor.getDoctores().subscribe((data) => {
       console.log(data);
       this.listarDoctores = data;
-    }, (error)=>{
+    }, (error) => {
       console.log(error)
     });
   }
 
-  eliminarDoctores(id:any){
+  eliminarDoctores(id: any) {
     Swal.fire({
       title: 'Seguro que desea eliminar al Doctor?',
       text: "Esta accion no será reversible",
@@ -36,15 +36,17 @@ export class ListarDoctoresComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Si, eliminar'
-    }).then((result)=>{
-      if(result.isConfirmed){
+    }).then((result) => {
+      if (result.isConfirmed) {
         this.servicioDoctor.deleteDoctor(id).subscribe((data) => {
-          Swal.fire(
-            'Doctor eliminado de la base de datos',
-            'success'
+          this.obtenerDoctores()
+          Swal.fire({
+            title: 'Doctor eliminado de la base de datos',
+            icon: 'success',
+            iconColor: '#84b530'
+          }
           )
-          this.obtenerDoctor();
-        }, (error)=>{
+        }, (error) => {
           console.log(error)
         })
       }

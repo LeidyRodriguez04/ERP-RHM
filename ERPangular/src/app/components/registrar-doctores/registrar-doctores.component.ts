@@ -15,17 +15,18 @@ export class RegistrarDoctoresComponent implements OnInit {
   doctoresForm: FormGroup;
   regexcorreo = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   regexnumero = /^[0-9]/;
-  titulo_form = 'Crear doctor';
+  titulo_form = 'Registrar doctor';
+  texto_btn = 'Registar'
   id: string | null;
 
-  constructor(private fb: FormBuilder, private router: Router, private _DoctorService: DoctorService, private idRoute: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private router: Router, private servicioDoctor: DoctorService, private idRoute: ActivatedRoute) {
     this.doctoresForm = this.fb.group({
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
-      fecha: ['', [Validators.required]],
-      correo: ['', [Validators.required, Validators.pattern(this.regexcorreo)]],
       tipoIdentificacion: ['', [Validators.required]],
       numeroIdentificacion: ['', [Validators.required, Validators.pattern(this.regexnumero)]],
+      fecha: ['', [Validators.required]],
+      correo: ['', [Validators.required, Validators.pattern(this.regexcorreo)]],
       area: ['', [Validators.required]],
       telefono: ['', [Validators.required, Validators.pattern(this.regexnumero)]],
     })
@@ -33,7 +34,7 @@ export class RegistrarDoctoresComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.accionSolicitada();
+    this.accionSolicitada()
   }
 
   agregarDoctores() {
@@ -44,28 +45,14 @@ export class RegistrarDoctoresComponent implements OnInit {
       numeroIdentificacion: this.doctoresForm.get('numeroIdentificacion')?.value,
       fecha: this.doctoresForm.get('fecha')?.value,
       correo: this.doctoresForm.get('correo')?.value,
-      telefono: this.doctoresForm.get('telefono')?.value,
       area: this.doctoresForm.get('area')?.value,
+      telefono: this.doctoresForm.get('telefono')?.value,
     }
     console.log(DOCTORES)
 
-    if (this.id !== null) {
-      //editamos producto
-      this._DoctorService.putDoctor(this.id, DOCTORES).subscribe(data => {
-        console.log(data)
-        this.router.navigate(['/']);
-        Swal.fire({
-          title: 'Datos del doctor actualizados!',
-          text: 'Se guardaron los cambios de datos del doctor',
-          icon: 'success',
-          confirmButtonText: 'Vale'
-        })
-      }, error => {
-        console.log(error);
-      })
-    } else {
-      this._DoctorService.postDoctor(DOCTORES).subscribe(data => {
-        this.router.navigate(['/']);
+    if (this.id == null) {
+      this.servicioDoctor.postDoctor(DOCTORES).subscribe(data => {
+        this.router.navigate(['listar-doctores'])
         Swal.fire({
           title: 'Exito!',
           text: 'El registro se creo correctamente',
@@ -75,23 +62,39 @@ export class RegistrarDoctoresComponent implements OnInit {
       }, error => {
         console.log(error);
       })
+    } else {
+
+      this.servicioDoctor.putDoctor(this.id, DOCTORES).subscribe(data => {
+        this.router.navigate(['listar-doctores'])
+        Swal.fire({
+          title: 'Datos del doctor actualizados!',
+          text: 'Se guardaron los cambios de datos del doctor',
+          icon: 'success'
+        })
+      }, error => {
+        console.log(error);
+      })
     }
   }
 
   accionSolicitada() {
     if (this.id !== null) {
-      this.titulo_form = "Editar producto";
-      this._DoctorService.getDoctor(this.id).subscribe(data => {
+      this.titulo_form = "Actualizar datos del doctor";
+      this.texto_btn = "Actualizar";
+      this.servicioDoctor.getDoctor(this.id).subscribe((data) => {
         this.doctoresForm.setValue({
           nombre: data.nombre,
-          apellido: data.categoria,
+          apellido: data.apellido,
           tipoIdentificacion: data.tipoIdentificacion,
           numeroIdentificacion: data.numeroIdentificacion,
           fecha: data.fecha,
           correo: data.correo,
-          telefono: data.telefono,
-          area: data.area
+          area: data.area,
+          telefono: data.telefono
         })
+      }, (error) => {
+        console.log(error)
+
       })
     }
   }
