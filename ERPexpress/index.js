@@ -21,8 +21,6 @@ app.get('/', (req, res) => {
     res.send('bienvenue')
 })
 
-//ruta de doctores
-app.use('/api/doctores', require('./routes/routes'));
 
 
 // creation du - creacion del localhost:4000

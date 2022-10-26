@@ -4,9 +4,9 @@
             <div class="card-body text-center">
                 <div class="d-flex flex-row justify-content-evenly">
                     <h2>Listado de personal</h2>
-                    <button class="btn btn-dark">Registrar</button>
+                    <button class="btn btn-dark" routerLink="/registrar-doctores">Registrar</button>
                 </div>
-                <table class="table table-striped table-success">
+                <table *ngIf="listarDoctores.length > 0" class="table table-striped table-success">
                     <thead>
                         <tr>
                             <th scope="col">Nombre</th>
@@ -31,19 +31,19 @@
                             <td>{{doctor.area}}</td>
                             <td>{{doctor.telefono}}</td>
                             <td>
-                                <button routerLink="['/editar-doctor', doctor._id]" class="btn-actualizar text-white p-2" type="submit">
+                                <button routerLink="['/editar-doctor', doctor._id]" class="btn-warning text-white p-2">
                                     <i class="fa-solid fa-file-pen"></i>
                                     Actualizar</button>
                             </td>
                             <td>
-                                <button (click)="eliminarDoctores(doctor._id)" class="btn btn-danger" type="submit">
+                                <button (click)="eliminarDoctores(doctor._id)" class="btn btn-danger">
                                     <i class="fa-solid fa-trash-can"></i>
                                     Borrar</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <h2 class="text-center text-danger fw-bold" *ngIf="listarDoctores.length == 0">No hay Dcotores registrados</h2>
+                <h2 class="text-center text-danger fw-bold" *ngIf="listarDoctores.length == 0">No hay Doctores registrados</h2>
             </div>
         </div>
     </div>

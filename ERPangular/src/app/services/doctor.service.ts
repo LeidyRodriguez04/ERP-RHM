@@ -10,27 +10,28 @@ import { DashboardComponent } from '../components/dashboard/dashboard.component'
 
 export class DoctorService {
 
-  url = 'http://localhost:4000/api/doctores/';
+  url = 'http://localhost:4000/api';
 
   constructor(private http: HttpClient) {}
 
   getDoctores():Observable<any>{
-    return this.http.get(this.url);
-  }
-
-  deleteDoctor(id: String): Observable<any>{
-    return this.http.delete(this.url + id)
+    return this.http.get(`${this.url}/doctores`)
   }
 
   postDoctor(Doctores: Doctores): Observable<any>{
-    return this.http.post(this.url, Doctores);
+    return this.http.post(`${this.url}/registar-doctores`, Doctores)
   }
 
+  deleteDoctor(id: String): Observable<any>{
+    return this.http.delete(`${this.url}/borrar-doctor/${id}`)
+  }
+
+
   getDoctor(id: String): Observable<any>{
-    return this.http.get(this.url + id)
+    return this.http.get(`${this.url}/actualizar-doctor/${id}`)
   }
 
   putDoctor(id: String, Doctores: Doctores): Observable<any>{
-    return this.http.put(this.url + id, Doctores);
+    return this.http.put(this.url + id, Doctores)
   }
 }

@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class ListarDoctoresComponent implements OnInit {
 
-  listarDoctores: Doctores[] =[];
+  listarDoctores: Doctores[] = [];
 
   constructor(private servicioDoctor: DoctorService) { }
   
