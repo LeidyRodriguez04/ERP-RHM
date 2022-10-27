@@ -15,7 +15,7 @@ export class RegistrarDoctoresComponent implements OnInit {
   doctoresForm: FormGroup;
   regexcorreo = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   regexnumero = /^[0-9]/;
-  titulo_form = 'Registrar doctor';
+  titulo_form = 'Registrar Doctor';
   texto_btn = 'Registar'
   id: string | null;
 

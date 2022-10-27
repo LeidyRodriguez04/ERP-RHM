@@ -21,6 +21,7 @@
     --color-numero-contacto:#8e43af;
     --color-azul-fondonumero-contacto:#f2f4ff;
     --color-gris-buscador-dash:#f3f3f9;
+    --color-fondo-dashboard: #f1f1f1;
 }
 body{
     overflow-x: hidden;

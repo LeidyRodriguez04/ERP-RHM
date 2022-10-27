@@ -1,6 +1,4 @@
 .dashboard{
-    position: absolute;
-    width: 100%;
 }
 .sidebar-container{
     background-color: var(--color-azul);

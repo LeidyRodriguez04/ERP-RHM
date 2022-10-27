@@ -5,6 +5,7 @@
 .copyright-text{
     color: var(--color-gris);
     font-size: var(--sizeletra);
+    margin-bottom: 0;
 }
 .textDecorationNoneColor1{
     text-decoration: none !important;
@@ -15,4 +16,7 @@
 }
 .logoFooter{
     border-radius: 100px;
+}
+.logoBIT{
+    color: #ffffff;
 }
