@@ -8,6 +8,7 @@ import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ListarDoctoresComponent } from './components/listar-doctores/listar-doctores.component';
+import { ListarPacienteComponent } from './components/listar-paciente/listar-paciente.component';
 import { RegistrarDoctoresComponent } from './components/registrar-doctores/registrar-doctores.component';
 import { RegistrarPacienteComponent } from './components/registrar-paciente/registrar-paciente.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';

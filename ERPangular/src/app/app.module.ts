@@ -35,7 +35,7 @@ import { RegistrarPacienteComponent } from './components/registrar-paciente/regi
     DashboardComponent,
     RegistrarDoctoresComponent,
     ListarDoctoresComponent,
-    NotFoundComponent
+    NotFoundComponent,
 
     ListarPacienteComponent,
     RegistrarPacienteComponent,
