@@ -1,8 +1,6 @@
-.dashboard{
-}
 .sidebar-container{
-    background-color: var(--color-azul);
-    min-height: 100vh;
+    background: var(--color-azul);
+    min-height: 90vh;
     width: 200px;
 }
 .logo{
