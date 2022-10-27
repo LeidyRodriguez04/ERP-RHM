@@ -24,6 +24,7 @@ const routes: Routes = [
     {path:'registrar-doctores', component: RegistrarDoctoresComponent},
     {path:'actualizar-doctor/:id', component: RegistrarDoctoresComponent},
     {path:'pacientes', component: ListarPacienteComponent},
+    {path:'listar-pacientes', component: ListarPacienteComponent},
     {path:'editarPaciente/:id',component: RegistrarPacienteComponent},
     {path:'registrar-paciente', component: RegistrarPacienteComponent},
     {path:'404',component:NotFoundComponent},

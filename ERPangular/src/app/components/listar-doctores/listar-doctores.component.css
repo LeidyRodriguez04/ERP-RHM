@@ -13,3 +13,6 @@
     font-size: larger;
     margin-bottom: 2rem;
 }
+.btn-crear{
+    background: var(--color-morado-slider);
+}
