@@ -6,3 +6,18 @@
 .btn-crear{
     background: var(--color-morado-slider);
 }
+.sidebar-container{
+    background-color: var(--color-azul);
+    min-height: 100vh;
+    width: 200px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: larger;
+    margin-bottom: 2rem;
+}

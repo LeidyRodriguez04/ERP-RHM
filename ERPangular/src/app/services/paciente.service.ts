@@ -24,4 +24,7 @@ export class PacienteService {
   getPaciente(id:string): Observable<any>{
     return this.http.get(`${this.url}/listar-pacientes/${id}`)
   }
+  putPaciente(id:string, paciente:Paciente):Observable<any>{
+    return this.http.put(`${this.url}/actualizar-paciente/${id}`, paciente)
+  }
 }

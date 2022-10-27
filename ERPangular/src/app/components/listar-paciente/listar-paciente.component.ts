@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 export class ListarPacienteComponent implements OnInit {
 
   listarPaciente: Paciente[]=[];
+  listaSintomasPaciente: any = [];
 
   constructor(private servicioPaciente: PacienteService) { }
 
@@ -21,6 +22,11 @@ export class ListarPacienteComponent implements OnInit {
     this.servicioPaciente.getPacientes().subscribe((data)=>{
       console.log(data)
       this.listarPaciente = data
+      // for (const datico of data) {
+      //   for (const datico2 of datico.sintomas) {
+      //     this.listaSintomasPaciente.push(datico2.item_text)
+      //   }
+      // }
     },(error) =>{
       console.log(error);       
     })

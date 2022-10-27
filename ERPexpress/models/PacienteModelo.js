@@ -28,10 +28,6 @@ const pacienteSchema = mongoose.Schema({
     altura: {
         type:Number,
         require:true
-    },
-    sintomas: {
-        type:Array,
-        require:true
     }
 },{
     versionKey: false

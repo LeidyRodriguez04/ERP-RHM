@@ -3,7 +3,7 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PacienteService } from "src/app/services/paciente.service";
 import { Paciente } from 'src/app/models/paciente';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import Swal from 'sweetalert2'
 
 @Component({
@@ -23,23 +23,26 @@ export class RegistrarPacienteComponent implements OnInit {
   regexAltura = /[0123456789]{2,3}/
   titulo_formulario = 'Crear Paciente'
   id:string | null;
+  texto_boton = "Crear"
 
-  constructor(private fb: FormBuilder, private servicioPaciente: PacienteService, private idRoute:ActivatedRoute) {
+  constructor(private fb: FormBuilder, private servicioPaciente: PacienteService, private idRoute:ActivatedRoute, private router:Router) {
     this.pacienteForm = this.fb.group({
-      nombre: ['',[Validators.required, Validators.pattern(this.regexNomApe)]],
-      apellido: ['', [Validators.required, Validators.pattern(this.regexNomApe)]],
+      nombre: ['',[Validators.required]],
+      apellido: ['', [Validators.required]],
       documento: ['', Validators.required],
-      numDocumento: ['', [Validators.required, Validators.pattern(this.regexNumDocumento)]],
-      telefono: ['', [Validators.required, Validators.pattern(this.regexTelefono)]],
-      edad: ['', [Validators.required, Validators.pattern(this.regexEdad)]],
-      altura: ['', [Validators.required, Validators.pattern(this.regexAltura)]],
-      sintomas: ['', Validators.required]
+      numDocumento: ['', [Validators.required]],
+      telefono: ['', [Validators.required]],
+      edad: ['', [Validators.required]],
+      altura: ['', [Validators.required]],
       
     })
     this.id = this.idRoute.snapshot.paramMap.get('id')
   }
 
   ngOnInit(): void {
+
+    this.accion()
+
     this.dropdownList = [
       { item_id: 1, item_text: 'ataque al corazón' },
       { item_id: 2, item_text: 'Quemadura grave' },
@@ -60,7 +63,7 @@ export class RegistrarPacienteComponent implements OnInit {
     }
   }
   
-  dataPaciente() {    
+  dataPaciente() {
     const PACIENTE: Paciente = {
       nombre: this.pacienteForm.get('nombre')?.value,
       apellido: this.pacienteForm.get('apellido')?.value,
@@ -70,15 +73,49 @@ export class RegistrarPacienteComponent implements OnInit {
       edad: this.pacienteForm.get('edad')?.value,
       altura: this.pacienteForm.get('altura')?.value,
       sintomas: this.pacienteForm.get('sintomas')?.value,      
-    }
-    console.log(JSON.stringify(PACIENTE))
-    this.servicioPaciente.postPaciente(PACIENTE).subscribe(() => {
-      Swal.fire({
-        icon: 'success',
-        title: 'Paciente registrado',
+    }  
+    if(this.id == null){      
+      console.log(JSON.stringify(PACIENTE))
+      this.router.navigate(['/pacientes'])
+      this.servicioPaciente.postPaciente(PACIENTE).subscribe(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Paciente Registrado',
+        })
+      }, (error) => {
+        console.log(error)
       })
-    }, (error) => {
-      console.log(error)
-    })
+    }else{
+      this.servicioPaciente.putPaciente(this.id, PACIENTE).subscribe(() => {
+        this.router.navigate(['/pacientes'])
+        Swal.fire({
+          icon: 'success',
+          title: 'Paciente Actualizado',
+        })
+      }, (error) => {
+        console.log(error)
+      })
+    }
   }
+  accion(){
+    if(this.id != null){
+      this.titulo_formulario = 'Actualizar'
+      this.texto_boton = 'Crear'
+      this.servicioPaciente.getPaciente(this.id).subscribe((data) => {
+        this.pacienteForm.setValue({
+          nombre: data.nombre,
+          apellido: data.apellido,
+          documento: data.documento,
+          numDocumento: data.numDocumento,
+          telefono: data.telefono,
+          edad: data.edad,
+          altura: data.altura,
+          sintomas: data.sintomas
+        })
+      }, (error) =>{
+        console.log(error)
+      })
+    }
+  }
+
 }
