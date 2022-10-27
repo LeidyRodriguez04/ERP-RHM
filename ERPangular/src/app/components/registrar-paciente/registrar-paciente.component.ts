@@ -16,24 +16,21 @@ export class RegistrarPacienteComponent implements OnInit {
   selectedItems: any = [];
   dropdownSettings: any = {};
   pacienteForm: FormGroup;
-  regexNomApe = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
-  regexNumDocumento = /[0123456789]{1,8}/;
-  regexTelefono = /\+57?[ -]*([0-9][ -]*){10}/;
-  regexEdad = /[0123456789]{1,2}/;
-  regexAltura = /[0123456789]{2,3}/
-  titulo_formulario = 'Crear Paciente'
+  regexNomApe = /^[A-Za-z]/;
+  regexNum = /^[0-9]+$/;
+  titulo_formulario = 'Crear Paciente';
   id:string | null;
   texto_boton = "Crear"
 
   constructor(private fb: FormBuilder, private servicioPaciente: PacienteService, private idRoute:ActivatedRoute, private router:Router) {
     this.pacienteForm = this.fb.group({
-      nombre: ['',[Validators.required]],
-      apellido: ['', [Validators.required]],
+      nombre: ['',[Validators.required, Validators.pattern(this.regexNomApe)]],
+      apellido: ['', [Validators.required, Validators.pattern(this.regexNomApe)]],
       documento: ['', Validators.required],
-      numDocumento: ['', [Validators.required]],
-      telefono: ['', [Validators.required]],
-      edad: ['', [Validators.required]],
-      altura: ['', [Validators.required]],
+      numDocumento: ['', [Validators.required, Validators.pattern(this.regexNum)]],
+      telefono: ['', [Validators.required, Validators.pattern(this.regexNum)]],
+      edad: ['', [Validators.required], Validators.pattern(this.regexNum)],
+      altura: ['', [Validators.required], Validators.pattern(this.regexNum)],
       
     })
     this.id = this.idRoute.snapshot.paramMap.get('id')
