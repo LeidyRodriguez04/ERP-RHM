@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class DashboardServicesService {
 
-    url = 'htt://localhost:4000/api'
+    url = 'http://localhost:4000/api'
 
   constructor(private http:HttpClient) {
 

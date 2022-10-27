@@ -4,12 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 //components
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CorreosComponent } from './components/correos/correos.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ListarDoctoresComponent } from './components/listar-doctores/listar-doctores.component';
+import { RegistrarDoctoresComponent } from './components/registrar-doctores/registrar-doctores.component';
 import { RegistrarPacienteComponent } from './components/registrar-paciente/registrar-paciente.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { ListarPacienteComponent } from './components/listar-paciente/listar-paciente.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,9 @@ const routes: Routes = [
     {path:'contacto', component: ContactoComponent},
     {path:'correos', component: CorreosComponent},
     {path:'dashboard', component: DashboardComponent},
+    {path:'listar-doctores', component: ListarDoctoresComponent},
+    {path:'registrar-doctores', component: RegistrarDoctoresComponent},
+    {path:'editar-doctor/:id', component: RegistrarDoctoresComponent},
     {path:'pacientes', component: ListarPacienteComponent},
     {path:'editarPaciente/:id',component: RegistrarPacienteComponent},
     {path:'registrar-paciente', component: RegistrarPacienteComponent},

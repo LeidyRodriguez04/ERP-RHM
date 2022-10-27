@@ -1,0 +1,108 @@
+
+<div class="pagRegistro">
+    <button routerLink="/listar-doctores">listar doctores</button>
+    <form [formGroup]="doctoresForm" (ngSubmit)="agregarDoctores()" class="row m-3 formDoctores" action="">
+        <div class="col-9 col-sm-19 col-md-7 col-lg-6 card bg-warning">
+            <div class="row py-4">
+                <h1 class="d-flex justify-content-center">{{titulo_form | uppercase}}</h1>
+                <div class="row col-12 mb-2">
+                    <div class="col-12 col-lg-6">
+                        <label for="input1" class="form-label">Nombre</label>
+                        <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre"
+                            aria-label="First name">
+                        <span class="text-danger fw-bold"
+                            *ngIf="doctoresForm.get('nombre')?.hasError('required') && doctoresForm.get('nombre')?.touched">Espacio
+                            obligatorio</span>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <label for="input2" class="form-label">Apellido</label>
+                        <input formControlName="apellido" type="text" class="form-control" placeholder="Apellido"
+                            aria-label="Last name">
+                        <span class="text-danger fw-bold"
+                            *ngIf="doctoresForm.get('apellido')?.hasError('required') && doctoresForm.get('apellido')?.touched">Espacio
+                            obligatorio</span>
+                    </div>
+                </div>
+                <div class="row col-lg-12 mb-2">
+                    <div class="col-6">
+                        <label for="inputState" class="form-label">Tipo de identificacion</label>
+                        <select formControlName="tipoIdentificacion" class="form-select">
+                            <option selected>Elija una...</option>
+                            <option value="cedula">Cedula</option>
+                            <option value="contraseña">Contraseña</option>
+                            <option value="cedulaExtrajera">Cedula de extrajeria</option>
+                        </select>
+                        <span class="text-danger fw-bold"
+                        *ngIf="doctoresForm.get('tipoIdentificacion')?.hasError('required') && doctoresForm.get('tipoIdentificacion')?.touched">Espacio
+                        obligatorio</span>
+                    </div>
+                    <div class="col-6">
+                        <label for="input4" class="form-label">Numero de identificacion</label>
+                        <input formControlName="numeroIdentificacion" type="number" class="form-control" 
+                        placeholder="Numero de indetificacion" aria-label="Last name">
+                        <span class="text-danger fw-bold"
+                        *ngIf="doctoresForm.get('numeroIdentificacion')?.hasError('required') && doctoresForm.get('numeroIdentificacion')?.touched">Espacio
+                        obligatorio</span>
+                    </div>
+                </div>
+                <div class="row col-12 mb-2">
+                    <div class="col-6 col-sm-5 col-lg-4">
+                        <label for="bday">Fecha de nacimiento:</label>
+                        <input formControlName="fecha" class="bday" type="date" id="bday" name="bday" />
+                        <span class="text-danger fw-bold"
+                        *ngIf="doctoresForm.get('fecha')?.hasError('required') && doctoresForm.get('fecha')?.touched">Espacio
+                        obligatorio</span>             
+                    </div>
+                    <div class="col-12 col-sm-7 col-lg-8">
+                        <label for="input6" class="form-label">Email</label>
+                        <input formControlName="correo" type="email" class="form-control" placeholder="Correo"
+                        aria-label="First name">
+                        <span class="text-danger fw-bold"
+                            *ngIf="doctoresForm.get('correo')?.hasError('required') && doctoresForm.get('correo')?.touched">Espacio
+                            obligatorio</span>
+                        </div>
+                    </div>
+                <div class="row col-lg-12 mb-2">
+                    <div class="col-lg-6 col-6">
+                        <label for="inputState" class="form-label">Área de trabajo</label>
+                        <select formControlName="area" class="form-select" aria-placeholder="">
+                            <option selected>Elija una...</option>
+                            <option value="ANESTESIOLOGIA">ANESTESIOLOGÍA</option>
+                            <option value="CARDIOLOGIA">CARDIOLOGÍA</option>
+                            <option value="CUIDADOS">CUIDADOS INTENSIVOS</option>
+                            <option value="HEMATOLOGIA">HEMATOLOGÍA</option>
+                            <option value="INTERNA">MEDICINA INTERNA</option>
+                            <option value="PEDIATRIA">PEDIATRÍA</option>
+                            <option value="REHABILITACION">REHABILITACIÓN</option>
+                            <option value="CIRUGIA">CIRUGÍA GENERAL</option>
+                            <option value="GINECOLOGIA">GINECOLOGÍA</option>
+                            <option value="OFTALMOLOGIA">OFTALMOLOGÍA</option>
+                            <option value="UROLOGIA">UROLOGÍA</option>
+                        </select>
+                        <span class="text-danger fw-bold"
+                            *ngIf="doctoresForm.get('area')?.hasError('required') && doctoresForm.get('area')?.touched">Espacio
+                            obligatorio</span>
+                    </div>
+                    <div class="col-lg-6 col-6">
+                        <label for="input4" class="form-label">Telefono</label>
+                        <input formControlName="telefono" type="number" class="form-control" placeholder="Telefono"
+                            aria-label="Last name">
+                        <span class="text-danger fw-bold"
+                            *ngIf="doctoresForm.get('telefono')?.hasError('required') && doctoresForm.get('telefono')?.touched">Espacio
+                            obligatorio</span>
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-danger" [disabled]="doctoresForm.invalid">Registar</button>
+                </div>
+            </div>
+    
+        </div>
+        <div class="col-md-3 col-5 d-flex justify-content-center align-items-center">
+            <img src="/assets/img/logo12.jpeg" class="w-100" alt="">
+        </div>
+    </form>
+    
+</div>
+
+<app-footer></app-footer>
