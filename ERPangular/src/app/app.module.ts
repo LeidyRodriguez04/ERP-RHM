@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +20,8 @@ import { ListarDoctoresComponent } from './components/listar-doctores/listar-doc
 import { RegistrarDoctoresComponent } from './components/registrar-doctores/registrar-doctores.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from "@angular/common/http";
-
+import { ListarPacienteComponent } from './components/listar-paciente/listar-paciente.component';
+import { RegistrarPacienteComponent } from './components/registrar-paciente/registrar-paciente.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +35,10 @@ import { HttpClientModule } from "@angular/common/http";
     DashboardComponent,
     RegistrarDoctoresComponent,
     ListarDoctoresComponent,
-    NotFoundComponent
+    NotFoundComponent,
 
+    ListarPacienteComponent,
+    RegistrarPacienteComponent,
 
   ],
   imports: [
